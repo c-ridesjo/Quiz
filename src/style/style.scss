@@ -1,5 +1,5 @@
-@use "utils/a11y"; // Om det inte funkar, byt @use mot @import
-@use "vendor/reset";
+@import url("utils/a11y"); // Om det inte funkar, byt @use mot @import
+@import url("vendor/reset");
 
 main {
   background-color: rgb(76 2 95);
