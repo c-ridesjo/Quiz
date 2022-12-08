@@ -1,4 +1,4 @@
-import './style/style.css';
+import './style/style.scss';
 
 const gameDescText = 'Välkommen till vårt familje-quiz!';
 const gameDescription = document.querySelector('#gameDescription');
