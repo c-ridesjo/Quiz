@@ -7,6 +7,39 @@ gameDescription.innerHTML = gameDescText;
 
 document.querySelector('#startGameBtn').addEventListener('click', startGame);
 
+/*const category = [
+  {
+    categoryText: 'Välj kategori:',
+    categoryOptions: [
+      'Film',
+      'Musik',
+      'Familj'
+    ],
+    correctAnswer: '?',
+  },*/
+
+const categoryDiv = document.querySelector('#categoryText');
+const choice1Btn = document.querySelector('#choice1');
+const choice2Btn = document.querySelector('#choice2');
+const choice3Btn = document.querySelector('#choice3');
+
+choice1Btn.addEventListener('click', checkChoice);
+choice2Btn.addEventListener('click', checkChoice);
+choice3Btn.addEventListener('click', checkChoice);
+
+function checkCategory(e) {
+  const userCategory = e.currentTarget.innerHTML;
+
+  const correctCategory = questions[currentQuestion - 1].correctCategory;
+  if (userCategory === correctCategory) {
+    points++;
+  } 
+  else {
+    points--;
+  }
+  nextQuestion();
+}
+
 let player = '';
 
 const questions = [
@@ -105,9 +138,9 @@ const questions = [
 function startGame() {
   console.log('startGame');
 
-  player = document.querySelector('#playerInput').value;
+  player = document.querySelector('#playerInput').value;    // Sparar spelarens namn
 
-  gameDescription.style.display = 'none';
+  gameDescription.style.display = 'none';     // Dölj html-elementen
   document.querySelector('#player').style.display = 'none';
 
   nextQuestion();
@@ -126,14 +159,14 @@ let currentQuestion = 0;
 let points = 0;
 
 function checkAnswer(e) {
-  const userAnswer = e.currentTarget.innerHTML;
+  const userAnswer = e.currentTarget.innerHTML;     // Vilket svarsalternativ spelaren väljer
 
-  const correctAnswer = questions[currentQuestion - 1].correctAnswer;
-  if (userAnswer === correctAnswer) {
-    points++;
+  const correctAnswer = questions[currentQuestion - 1].correctAnswer;    // -1 för att få rätt svar innan nästa fråga
+  if (userAnswer === correctAnswer) {     // Jämför spelarens svar med det rätta svaret
+    points++;     // Ger 1 poäng vid rätt svar
   } 
   else {
-    points--;
+    points--;     // Ger -1 poäng vid fel svar
   }
   nextQuestion();
 }
@@ -149,8 +182,21 @@ function nextQuestion() {
   answer2Btn.innerHTML = questions[currentQuestion].answerOptions[1];
   answer3Btn.innerHTML = questions[currentQuestion].answerOptions[2];
 
-  currentQuestion++; 
+  currentQuestion++;      // currentQuestion + 1 (går vidare till nästa fråga)
 }
 
-document.querySelector('#restartGameBtn').addEventListener('click', startGame);
+document.querySelector('#restartGameBtn').addEventListener('click', restartGame);
 
+function restartGame() {
+  document.querySelector('#gameOver').style.display = 'none';
+  document.querySelector('#questionContainer').classlist.remove('hidden');
+  currentQuestion = 0;
+  points = 0;
+  nextQuestion();
+}
+
+function gameOver() {
+  document.querySelector('#gameOver').style.display = 'block';
+  document.querySelector('#questionsContainer').classList.add('hidden');
+  document.querySelector('#pontsContainer').innerHTML = `Du fick ${points} poäng!`;
+}

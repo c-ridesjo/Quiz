@@ -1,23 +1,37 @@
 //@use url ('utils/a11y'); // Om det inte funkar, byt @use mot @import
 //@use url ('vendor/reset');
 
-main {
+body {
   background-color: rgb(76 2 95);
   color: white;
-  padding: 20px;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: rem(16px);
+  font-size: 0.8rem;
   line-height: 24px;
   font-weight: 400;
-  }
-  
+  margin-block: 20px;
+  display: flex;
+  margin: auto;
+  gap: 20px;
+  justify-content: space-around;
+}
+ 
   h1 {
     font-family: 'Fredoka One', sans-serif;
-    font-size: 1rem;
+    font-size: 1.8rem;
+    display: block;
+    display: relative;
+    color:rgb(239 28 183);
+    padding: 35px;
+    text-align: center;
+
+  }
+
+  .category-container {
+    font-size: 0.4rem;
   }
 
   .player {
-    background-color: rgb(239 239 102);
+    background-color: rgb(239 102 228);
   }
 
   .question-container {
@@ -25,7 +39,7 @@ main {
   }
 
   .start-game-btn, .restart-game-btn {
-    font-size: 0.3rem;
+    font-size: 0.8rem;
   }
 
   .hidden {
