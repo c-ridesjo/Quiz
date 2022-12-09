@@ -7,7 +7,7 @@ gameDescription.innerHTML = gameDescText;
 
 document.querySelector('#startGameBtn').addEventListener('click', startGame);
 
-/*const category = [
+const category = [
   {
     categoryText: 'Välj kategori:',
     categoryOptions: [
@@ -15,34 +15,37 @@ document.querySelector('#startGameBtn').addEventListener('click', startGame);
       'Musik',
       'Familj'
     ],
-    correctAnswer: '?',
-  },*/
+    choiceOfCat: '?',     // Val av kategori    ????
+  }
+]
 
-const categoryDiv = document.querySelector('#categoryText');
-const choice1Btn = document.querySelector('#choice1');
+const categoryDiv = document.querySelector('#categoryText');      // Skapar hållare för kategorier
+const choice1Btn = document.querySelector('#choice1');        // Skapar knappar för kategorier
 const choice2Btn = document.querySelector('#choice2');
 const choice3Btn = document.querySelector('#choice3');
 
-choice1Btn.addEventListener('click', checkChoice);
+choice1Btn.addEventListener('click', checkChoice);      // Lägger till click-event till knapparna
 choice2Btn.addEventListener('click', checkChoice);
 choice3Btn.addEventListener('click', checkChoice);
 
-function checkCategory(e) {
+let currentCategory = 0;      // ????????
+
+function checkCategory(e) {       // Skapar funktion för val av kategori
   const userCategory = e.currentTarget.innerHTML;
 
-  const correctCategory = questions[currentQuestion - 1].correctCategory;
-  if (userCategory === correctCategory) {
-    points++;
-  } 
-  else {
-    points--;
+  if (userCategory === choice1) {
+    questionsChoice1;
   }
-  nextQuestion();
+  else if (userCategory === choice2) {
+    questionsChoice2;
+  }
+  else 
+    questionsChoice3;
 }
 
 let player = '';
 
-const questions = [
+const questionsChoice1 = [           // Frågor för kategori 1 (film)
   {
     questionText: 'Vem hissades upp i flaggstången i Lönneberga?',
     answerOptions: [
@@ -145,6 +148,30 @@ function startGame() {
 
   nextQuestion();
 }
+
+const questionsChoice2 = [        // Frågor för kategori 2 (musik)
+  {
+    questionText: 'Vem sjunger "Dans och håll igång"',
+    answerOptions: [
+      'Hasse Andersson',
+      'Lasse Alfredsson',
+      'Hasse Albertsson'
+    ],
+    correctAnswer: 'Hasse Andersson',
+  }
+]
+
+const questionsChoice3 = [        // Frågor för kategori 3 (familj)
+  {
+    questionText: 'Vem är hungrigast av spökena?',
+    answerOptions: [
+      'Freezy',
+      'William',
+      'Gulp'
+    ],
+    correctAnswer: 'Gulp',
+  }
+]
 
 const questionDiv = document.querySelector('#questionText');
 const answer1Btn = document.querySelector('#answer1');

@@ -2,9 +2,9 @@
 //@use url ('vendor/reset');
 
 body {
-  background-color: rgb(76 2 95);
+  background-color: rgb(55 5 124);
   color: white;
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 0.8rem;
   line-height: 24px;
   font-weight: 400;
@@ -17,7 +17,7 @@ body {
  
   h1 {
     font-family: 'Fredoka One', sans-serif;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     display: block;
     display: relative;
     color:rgb(239 28 183);
@@ -26,12 +26,8 @@ body {
 
   }
 
-  .category-container {
-    font-size: 0.4rem;
-  }
-
-  .player {
-    background-color: rgb(239 102 228);
+  #player {
+    margin-top: 5rem;
   }
 
   .question-container {
@@ -39,7 +35,10 @@ body {
   }
 
   .start-game-btn, .restart-game-btn {
-    font-size: 0.8rem;
+    font-size: 2rem;
+    width: 4rem;
+    height: 2rem;
+    background-color: aqua;
   }
 
   .hidden {
