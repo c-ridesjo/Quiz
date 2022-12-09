@@ -204,7 +204,7 @@ function nextQuestion() {
     return;
   }
 
-  questionDiv.innerHTML = questions[currentQuestion].questionText;
+  questionContainer.innerHTML = questions[currentQuestion].questionText;
   answer1Btn.innerHTML = questions[currentQuestion].answerOptions[0];
   answer2Btn.innerHTML = questions[currentQuestion].answerOptions[1];
   answer3Btn.innerHTML = questions[currentQuestion].answerOptions[2];

@@ -24,6 +24,10 @@ h1 {
   text-align: center;
 }
 
+#categorytext {
+  font-size: 1rem;
+}
+
 #choice1, #choice2, #choice3 {
   margin-top: 1.5rem;
   font-size: 1.4rem;
@@ -36,8 +40,6 @@ h1 {
   text-align: center;
   display: inline-block;
   cursor: pointer;
-  //justify-content: center;
-  //flex-direction: row;
 }
 
 #player {
@@ -46,7 +48,7 @@ h1 {
   margin-left: 5.5rem;
 }
 
-#startGameBtn, #restartGameBtn, #nextQuestBtn {
+#startgamebtn, #restartgamebtn, #nextquestbtn {
   margin-top: 1.5rem;
   margin-left: 1rem;
   font-size: 2rem;
@@ -58,11 +60,12 @@ h1 {
   text-align: center;
   display: inline-block;
   cursor: pointer;
-
 }
 
-#questionContainer {
+#questioncontainer {
   margin-top: 10rem;
+  border: 0.2rem;
+  border-color: white;
 }
 
 #answer1, #answer2, #answer3 {
