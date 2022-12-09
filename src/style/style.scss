@@ -15,39 +15,63 @@ body {
   justify-content: space-around;
 }
  
-  h1 {
-    font-family: 'Fredoka One', sans-serif;
-    font-size: 2.2rem;
-    display: block;
-    display: relative;
-    color:rgb(239 28 183);
-    padding: 35px;
-    text-align: center;
+h1 {
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 2.2rem;
+  display: relative;
+  color:rgb(239 28 183);
+  padding: 35px;
+  text-align: center;
+}
 
-  }
+#choice1, #choice2, #choice3 {
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
+  width: 7rem;
+  height: 3rem;
+  background-color: rgb(38 200 71);
+  border-color: black;
+  border-radius: 4px;
+  padding: 5px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  //justify-content: center;
+  //flex-direction: row;
+}
 
-  #player {
-    margin-top: 5rem;
-  }
+#player {
+  margin-top: 5rem;
+  justify-content: center;
+  margin-left: 5rem;
+}
 
-  .question-container {
-    font-size: 0.4rem;
-  }
+.question-container {
+  color: blue;
+  font-size: 0.4rem;
+}
 
-  .start-game-btn, .restart-game-btn {
-    font-size: 2rem;
-    width: 4rem;
-    height: 2rem;
-    background-color: aqua;
-  }
+#startGameBtn, #restartGameBtn {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  width: 9rem;
+  height: 3rem;
+  background-color: aqua;
+  border-radius: 4px;
+  padding: 15px 32;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  justify-content: center;
+}
 
-  .hidden {
-    display: none;
-  }
+.hidden {
+  display: none;
+}
 
-  .points-container {
-    font-size: 0.2rem;
-  }
+.points-container {
+  font-size: 0.2rem;
+}
 
 /*
 :root {
@@ -106,5 +130,4 @@ body {
       }
     }
   }
-}
-*/
+} */
