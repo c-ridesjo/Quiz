@@ -4,12 +4,13 @@ const category = [
   {
     categoryText: 'Välj kategori:',
     categoryOptions: [
-      'Film',
-      'Musik',
-      'Familj'
+      'choice1',
+      'choice2',
+      'choice3'
     ],
     userCategory: ' ',     // Val av kategori    ????
   }
+  
 ]
 
 const categoryDiv = document.querySelector('#categoryText');      // Skapar hållare för kategorier
@@ -24,18 +25,21 @@ choice3Btn.addEventListener('click', checkChoice);
 let currentCategory = 0;      
 
 function checkChoice(e) {       // Skapar funktion för val av kategori
-  const userCategory = e.currentTarget.innerHTML;
+  const userCategory = e.currentCategory.innerHTML;
 
   const userChoice = category[currentCategory].userChoice;
   if (userCategory === choice1) {
-    console.log('Film');
+    console.log('choice1');
   }
-  else if (userCategory === choice2) {
-    console.log('Musik');
+  if (userCategory === choice2) {
+    console.log('choice2');
   }
-  else 
-   console.log('Familj');
+  else {
+   console.log('choice3');   
+  }
 }
+
+//document.querySelector('#categoryText').style.display = 'none';      // Kategorierna döljs    ???
 
 let player = 0;
 
@@ -46,7 +50,7 @@ function startGame() {
 
   player = document.querySelector('#playerInput').value;    // Sparar spelarens namn
 
-  document.querySelector('#player').style.display = 'none';
+  document.querySelector('#player').style.display = 'none'; // Namnet döljs
 
   nextQuestion();
 }
@@ -181,7 +185,7 @@ let currentQuestion = 0;
 let points = 0;
 
 function checkAnswer(e) {
-  const userAnswer = e.currentTarget.innerHTML;     // Vilket svarsalternativ spelaren väljer
+  const userAnswer = e.currentQuestion.innerHTML;     // Vilket svarsalternativ spelaren väljer
 
   const correctAnswer = questions[currentQuestion - 1].correctAnswer;    // -1 för att få rätt svar innan nästa fråga
   if (userAnswer === correctAnswer) {     // Jämför spelarens svar med det rätta svaret
