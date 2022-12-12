@@ -33,7 +33,6 @@ h1 {
   font-size: 4rem;
   margin-top: 40rem;
   margin-left: 2.0rem;
-  font-size: 2rem;
 }
 
 #choice1, #choice2, #choice3 {
@@ -49,6 +48,11 @@ h1 {
   text-align: center;
   display: inline-block;
   cursor: pointer;
+}
+
+#descriptiontext {
+  color: red;
+  text-transform: uppercase;
 }
 
 #player {

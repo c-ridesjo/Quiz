@@ -1,11 +1,9 @@
 import './style/style.scss';
 
-const gameDescText = 'Välkommen till vårt familje-quiz!';
-const gameDescription = document.querySelector('#gameDescription');
+//const descriptionText = 'Välkommen till vårt familje-quiz!';
+//const gameDescription = document.querySelector('#gameDescription');
 
-gameDescription.innerHTML = gameDescText;
-
-document.querySelector('#startGameBtn').addEventListener('click', startGame);
+//gameDescription.innerHTML = descriptionText;
 
 const category = [
   {
@@ -15,7 +13,7 @@ const category = [
       'Musik',
       'Familj'
     ],
-    choiceOfCat: '?',     // Val av kategori    ????
+    userCategory: ' ',     // Val av kategori    ????
   }
 ]
 
@@ -30,20 +28,34 @@ choice3Btn.addEventListener('click', checkChoice);
 
 let currentCategory = 0;      // ????????
 
-function checkCategory(e) {       // Skapar funktion för val av kategori
+function checkChoice(e) {       // Skapar funktion för val av kategori
   const userCategory = e.currentTarget.innerHTML;
 
+  const userChoice = category[currentCategory].userChoice;
   if (userCategory === choice1) {
-    questionsChoice1;
+    console.log('Film');
   }
   else if (userCategory === choice2) {
-    questionsChoice2;
+    console.log('Musik');
   }
   else 
-    questionsChoice3;
+   console.log('Familj');
 }
 
-let player = '';
+let player = 0;
+
+document.querySelector('#startGameBtn').addEventListener('click', startGame);
+
+function startGame() {
+  console.log('startGame');
+
+  player = document.querySelector('#playerInput').value;    // Sparar spelarens namn
+
+  gameDescription.style.display = 'none';     // Dölj html-elementen
+  document.querySelector('#player').style.display = 'none';
+
+  nextQuestion();
+}
 
 const questionsChoice1 = [           // Frågor för kategori 1 (film)
   {
@@ -138,17 +150,6 @@ const questionsChoice1 = [           // Frågor för kategori 1 (film)
   }
 ];
 
-function startGame() {
-  console.log('startGame');
-
-  player = document.querySelector('#playerInput').value;    // Sparar spelarens namn
-
-  gameDescription.style.display = 'none';     // Dölj html-elementen
-  document.querySelector('#player').style.display = 'none';
-
-  nextQuestion();
-}
-
 const questionsChoice2 = [        // Frågor för kategori 2 (musik)
   {
     questionText: 'Vem sjunger "Dans och håll igång"',
@@ -225,5 +226,5 @@ function restartGame() {
 function gameOver() {
   document.querySelector('#gameOver').style.display = 'block';
   document.querySelector('#questionsContainer').classList.add('hidden');
-  document.querySelector('#pontsContainer').innerHTML = `Du fick ${points} poäng!`;
+  document.querySelector('#pointsContainer').innerHTML = `Du fick ${points} poäng!`;
 }
