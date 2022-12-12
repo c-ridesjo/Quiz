@@ -22,20 +22,20 @@ choice1Btn.addEventListener('click', checkChoice);      // Lägger till click-ev
 choice2Btn.addEventListener('click', checkChoice);
 choice3Btn.addEventListener('click', checkChoice);
 
-let currentCategory = 0;      
+let currentTarget = 0;      
 
 function checkChoice(e) {       // Skapar funktion för val av kategori
-  const userCategory = e.currentCategory.innerHTML;
+  const userCategory = e.currentTarget.innerHTML;
 
-  const userChoice = category[currentCategory].userChoice;
+  const userChoice = category[currentTarget].userChoice;
   if (userCategory === choice1) {
-    console.log('choice1');
+    console.log('Film');
   }
   if (userCategory === choice2) {
-    console.log('choice2');
+    console.log('Musik');
   }
   else {
-   console.log('choice3');   
+   console.log('Familj');   
   }
 }
 
