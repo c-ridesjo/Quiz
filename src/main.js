@@ -1,10 +1,5 @@
 import './style/style.scss';
 
-//const descriptionText = 'Välkommen till vårt familje-quiz!';
-//const gameDescription = document.querySelector('#gameDescription');
-
-//gameDescription.innerHTML = descriptionText;
-
 const category = [
   {
     categoryText: 'Välj kategori:',
@@ -26,7 +21,7 @@ choice1Btn.addEventListener('click', checkChoice);      // Lägger till click-ev
 choice2Btn.addEventListener('click', checkChoice);
 choice3Btn.addEventListener('click', checkChoice);
 
-let currentCategory = 0;      // ????????
+let currentCategory = 0;      
 
 function checkChoice(e) {       // Skapar funktion för val av kategori
   const userCategory = e.currentTarget.innerHTML;
@@ -51,7 +46,6 @@ function startGame() {
 
   player = document.querySelector('#playerInput').value;    // Sparar spelarens namn
 
-  gameDescription.style.display = 'none';     // Dölj html-elementen
   document.querySelector('#player').style.display = 'none';
 
   nextQuestion();
@@ -198,6 +192,8 @@ function checkAnswer(e) {
   }
   nextQuestion();
 }
+
+document.querySelector('#nextQuestBtn').addEventListener('click', startGame);
 
 function nextQuestion() {
   if (currentQuestion >= questions.length) {
