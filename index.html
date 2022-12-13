@@ -11,30 +11,32 @@
 <body>
   <main>
     <h1>FamiljeQuizzet</h1>
-    <div id="categoryContainer"></div>
-      <div id="categoryText">Välj kategori!</div> 
-        <button id="choice1">Film</button>
-        <button id="choice2">Musik</button>
-        <button id="choice3">Familj</button>
+    <section class="frontPage">
+      <div id="categoryContainer"></div>
+        <div id="categoryText">Välj kategori!</div> 
+          <button id="choice1">Film</button>
+          <button id="choice2">Musik</button>
+          <button id="choice3">Familj</button>
+    </section>
 
-        <section class="startGamePage">
-            <div id="player">
-            <label>
-              Skriv ditt namn:<br><input type="text" id="playerInput" value=" "><br>
-            </label>
-            <button id="startGameBtn">Starta</button>
-          </div>
-        </section>
+    <section class="startGamePage">
+      <div id="player">
+      <label>
+        Skriv ditt namn:<br><input type="text" id="playerInput" value=" "><br>
+      </label>
+      <button id="startGameBtn">Starta</button>
+    </div>
+    </section>
 
-        <section class="questionPage">
-          <div id="questionContainer">
-            <div id="questionText"></div>     <!--Frågor-->
-            <button id="answer1"></button> 
-            <button id="answer2"></button>
-            <button id="answer3"></button>
-          </div>
-          <button id="nextQuestBtn">Nästa fråga</button>
-        </section>
+    <section class="questionPage">
+      <div id="questionContainer">
+        <div id="questionText"></div>     <!--Frågor-->
+        <button id="answer1"></button> 
+        <button id="answer2"></button>
+        <button id="answer3"></button>
+      </div>
+      <button id="nextQuestBtn">Nästa fråga</button>
+    </section>
         
     <div id="gameOver" class="hidden">
       Spelet är slut!

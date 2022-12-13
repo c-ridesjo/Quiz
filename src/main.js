@@ -39,7 +39,9 @@ function checkChoice(e) {       // Skapar funktion för val av kategori
   }
 }
 
-//document.querySelector('#categoryText').style.display = 'none';      // Kategorierna döljs    ???
+// document.querySelector('#categoryText').style.display = 'none';      // Kategorierna döljs    ???
+
+// Skriv ut vilken kategori som valts innan spelaren skriver in sitt namn
 
 let player = 0;
 
