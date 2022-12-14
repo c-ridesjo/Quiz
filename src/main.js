@@ -8,43 +8,39 @@ const category = [
       'choice2',
       'choice3'
     ],
-    userCategory: ' ',     // Val av kategori    ????
-  }
-  
+    userCategory: ' ',  
+  }  
 ]
 
 const categoryDiv = document.querySelector('#categoryText');      // Skapar hållare för kategorier
 const choice1Btn = document.querySelector('#choice1');        // Skapar knappar för kategorier
 const choice2Btn = document.querySelector('#choice2');
 const choice3Btn = document.querySelector('#choice3');
+const questionText = document.querySelector('#questionText');
 
 choice1Btn.addEventListener('click', checkChoice);      // Lägger till click-event till knapparna
 choice2Btn.addEventListener('click', checkChoice);
 choice3Btn.addEventListener('click', checkChoice);
 
-let currentTarget = 0;      
+let currentTarget = 0;   
+let currentQuestion = 0;   
 
 function checkChoice(e) {       // Skapar funktion för val av kategori
   const userCategory = e.currentTarget.innerHTML;
 
   const userChoice = category[currentTarget].userChoice;
   if (userCategory === 'Film') {
-    console.log('Film');
+    console.log('Film');        // Skriv ut vilken kategori som valts 
   }
   if (userCategory === 'Musik') {
     console.log('Musik');
   }
   if (userCategory === 'Familj') {
-   console.log('Familj');   
-   
+   console.log('Familj');      
   }
-  document.querySelector('#choice3').style.display = 'none';
+  document.querySelector('#categoryContainer').style.display = 'none';    // Kategorierna döljs    ???
 }
-
-      // Kategorierna döljs    ???
-
-// Skriv ut vilken kategori som valts innan spelaren skriver in sitt namn
-
+    
 let player = 0;
 
 document.querySelector('#startGameBtn').addEventListener('click', startGame);
@@ -185,13 +181,12 @@ answer1Btn.addEventListener('click', checkAnswer);
 answer2Btn.addEventListener('click', checkAnswer);
 answer3Btn.addEventListener('click', checkAnswer);
 
-let currentQuestion = 0;
 let points = 0;
 
 function checkAnswer(e) {
-  const userAnswer = e.currentQuestion.innerHTML;     // Vilket svarsalternativ spelaren väljer
+  const userAnswer = e.currentTarget.innerHTML;     // Vilket svarsalternativ spelaren väljer
 
-  const correctAnswer = questions[currentQuestion - 1].correctAnswer;    // -1 för att få rätt svar innan nästa fråga
+  const correctAnswer = questionsChoice1[currentQuestion - 1].correctAnswer;    // -1 för att få rätt svar innan nästa fråga
   if (userAnswer === correctAnswer) {     // Jämför spelarens svar med det rätta svaret
     points++;     // Ger 1 poäng vid rätt svar
   } 
@@ -204,15 +199,15 @@ function checkAnswer(e) {
 document.querySelector('#nextQuestBtn').addEventListener('click', startGame);
 
 function nextQuestion() {
-  if (currentQuestion >= questions.length) {
+  if (currentQuestion >= questionsChoice1.length) {
     gameOver();
     return;
   }
 
-  questionContainer.innerHTML = questions[currentQuestion].questionText;
-  answer1Btn.innerHTML = questions[currentQuestion].answerOptions[0];
-  answer2Btn.innerHTML = questions[currentQuestion].answerOptions[1];
-  answer3Btn.innerHTML = questions[currentQuestion].answerOptions[2];
+  questionText.innerHTML = questionsChoice1[currentQuestion].questionText;
+  answer1Btn.innerHTML = questionsChoice1[currentQuestion].answerOptions[0];
+  answer2Btn.innerHTML = questionsChoice1[currentQuestion].answerOptions[1];
+  answer3Btn.innerHTML = questionsChoice1[currentQuestion].answerOptions[2];
 
   currentQuestion++;      // currentQuestion + 1 (går vidare till nästa fråga)
 }
@@ -221,7 +216,7 @@ document.querySelector('#restartGameBtn').addEventListener('click', restartGame)
 
 function restartGame() {
   document.querySelector('#gameOver').style.display = 'none';
-  document.querySelector('#questionContainer').classlist.remove('hidden');
+  document.querySelector('#questionContainer').classList.remove('hidden');
   currentQuestion = 0;
   points = 0;
   nextQuestion();
