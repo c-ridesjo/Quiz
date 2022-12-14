@@ -28,18 +28,20 @@ function checkChoice(e) {       // Skapar funktion för val av kategori
   const userCategory = e.currentTarget.innerHTML;
 
   const userChoice = category[currentTarget].userChoice;
-  if (userCategory === choice1) {
+  if (userCategory === 'Film') {
     console.log('Film');
   }
-  if (userCategory === choice2) {
+  if (userCategory === 'Musik') {
     console.log('Musik');
   }
-  else {
+  if (userCategory === 'Familj') {
    console.log('Familj');   
+   
   }
+  document.querySelector('#choice3').style.display = 'none';
 }
 
-// document.querySelector('#categoryText').style.display = 'none';      // Kategorierna döljs    ???
+      // Kategorierna döljs    ???
 
 // Skriv ut vilken kategori som valts innan spelaren skriver in sitt namn
 
