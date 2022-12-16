@@ -22,7 +22,7 @@ main {
  
 h1 {
   font-family: 'Fredoka One', sans-serif;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   display: relative;
   color:rgb(239 28 183);
   padding: 35px;
@@ -30,6 +30,14 @@ h1 {
 }
 
 #categoryText, #questionText {        
+  font-size: 1.6rem;
+  margin-top: 2.0rem;
+  margin-left: 1.0rem;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+#questionText {
   font-size: 1.2rem;
   margin-top: 2.0rem;
   margin-left: 1.0rem;
@@ -60,11 +68,6 @@ h1 {
   padding: 35px;
   text-align: center;
 }
-
-/* #descriptiontext {
-  color: red;
-  text-transform: uppercase;
-} */
 
 #player {
   margin-top: 5rem;
