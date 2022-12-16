@@ -188,10 +188,14 @@ function checkAnswer(e) {
 
   const correctAnswer = questionsChoice1[currentQuestion - 1].correctAnswer;    // -1 för att få rätt svar innan nästa fråga
   if (userAnswer === correctAnswer) {     // Jämför spelarens svar med det rätta svaret
-    points++;     // Ger 1 poäng vid rätt svar
+    points++,     // Ger 1 poäng vid rätt svar
+    console.log('Rätt svar!')
+    document.querySelectorAll("answers").style.backgroundColor = "green";;
   } 
   else {
-    points--;     // Ger -1 poäng vid fel svar
+    points--,     // Ger -1 poäng vid fel svar
+    console.log('Fel svar!'),
+    document.querySelectorAll("answers").style.backgroundColor = "red"; 
   }
   nextQuestion();
 }
