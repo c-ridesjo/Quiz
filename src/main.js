@@ -190,12 +190,17 @@ function checkAnswer(e) {
   if (userAnswer === correctAnswer) {     // Jämför spelarens svar med det rätta svaret
     points++,     // Ger 1 poäng vid rätt svar
     console.log('Rätt svar!')
-    document.querySelectorAll("answers").style.backgroundColor = "green";;
+    document.getElementById('answer1').style.backgroundColor = 'green';
+    document.getElementById('answer2').style.backgroundColor = 'green';
+    document.getElementById('answer3').style.backgroundColor = 'green';
+    
   } 
   else {
     points--,     // Ger -1 poäng vid fel svar
     console.log('Fel svar!'),
-    document.querySelectorAll("answers").style.backgroundColor = "red"; 
+    document.getElementById('answer1').style.backgroundColor = 'red';
+    document.getElementById('answer2').style.backgroundColor = 'red';
+    document.getElementById('answer3').style.backgroundColor = 'red'; 
   }
   nextQuestion();
 }
@@ -220,7 +225,7 @@ document.querySelector('#restartGameBtn').addEventListener('click', restartGame)
 
 function restartGame() {
   document.querySelector('#gameOver').style.display = 'none';
-  document.querySelector('#questionContainer').classList.remove('hidden');
+  document.querySelector('#questionsContainer').classList.remove('hidden');
   currentQuestion = 0;
   points = 0;
   nextQuestion();

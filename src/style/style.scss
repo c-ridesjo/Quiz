@@ -1,5 +1,5 @@
-//@use url ('utils/a11y'); // Om det inte funkar, byt @use mot @import
-//@use url ('vendor/reset');
+// @import url ("utils/a11y");
+// @import url ("vendor/reset");
 
 body {
   background-color: rgb(22 2 50);
@@ -29,7 +29,7 @@ h1 {
   text-align: center;
 }
 
-#categorytext, #questiontext {         // css går inte att ändra 
+#categoryText, #questionText {         // css går inte att ändra 
   font-size: 4.6rem;
   margin-top: 40rem;
   margin-left: 2.0rem;
@@ -72,22 +72,18 @@ h1 {
   justify-content: center;
 }
 
-/*.buttons {
+#startGameBtn, #restartGameBtn, #nextQuestBtn {     // går inte att ändra
+  background-color: rgb(239 28 183);
   margin-top: 1.5rem;
   margin-left: 1rem;
   font-size: 2rem;
   width: 9rem;
   height: 3rem;
-  background-color: rgb(239 28 183);
   border-radius: 4px;
   padding: 15px 32;
   text-align: right;
   display: inline-block;
   cursor: pointer;
-} */
-
-#startgamebtn, #restartgamebtn, #nextquestion {     // varför går css inte att ändra???
-  background-color: rgb(239 28 183);
 }
 
 #gameover {
@@ -105,9 +101,7 @@ h1 {
   border-style: double;
 }
 
-#answers {
-  
-}
+
 
 #answer1, #answer2, #answer3 {
   margin-top: 1.5rem;
