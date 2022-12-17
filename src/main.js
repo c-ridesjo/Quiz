@@ -38,7 +38,7 @@ function checkChoice(e) {       // Skapar funktion för val av kategori
   if (userCategory === 'Familj') {
    console.log('Familj');      
   }
-  document.querySelector('#categoryContainer').style.display = 'none';    // Kategorierna döljs    ???
+  document.querySelector('#categoryContainer').style.display = 'none';    // Kategorierna döljs    
 }
     
 let player = 0;
@@ -158,7 +158,7 @@ const questionsChoice2 = [        // Frågor för kategori 2 (musik)
     ],
     correctAnswer: 'Hasse Andersson',
   }
-]
+];
 
 const questionsChoice3 = [        // Frågor för kategori 3 (familj)
   {
@@ -170,7 +170,7 @@ const questionsChoice3 = [        // Frågor för kategori 3 (familj)
     ],
     correctAnswer: 'Gulp',
   }
-]
+];
 
 const questionDiv = document.querySelector('#questionText');
 const answer1Btn = document.querySelector('#answer1');
@@ -208,7 +208,7 @@ function checkAnswer(e) {
 document.querySelector('#nextQuestBtn').addEventListener('click', startGame);
 
 function nextQuestion() {
-  if (currentQuestion >= questionsChoice1.length) {
+  if (currentQuestion >= questionsChoice1.length) {     // När frågorna är slut
     gameOver();
     return;
   }
@@ -234,5 +234,6 @@ function restartGame() {
 function gameOver() {
   document.querySelector('#gameOver').style.display = 'block';
   document.querySelector('#questionsContainer').classList.add('hidden');
+  document.querySelector('#nextQuestBtn').style.display = 'none'; 
   document.querySelector('#pointsContainer').innerHTML = `Du fick ${points} poäng!`;
 }
