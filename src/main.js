@@ -10,7 +10,7 @@ const category = [
     ],
     userCategory: ' ',  
   }  
-]
+];
 
 const categoryDiv = document.querySelector('#categoryText');      // Skapar hållare för kategorier
 const choice1Btn = document.querySelector('#choice1');        // Skapar knappar för kategorier
@@ -38,7 +38,6 @@ function checkChoice(e) {       // Skapar funktion för val av kategori
   if (userCategory === 'Familj') {
    console.log('Familj');      
   }
-  document.querySelector('#categoryContainer').style.display = 'none';    // Kategorierna döljs    
 }
     
 let player = 0;
@@ -47,11 +46,12 @@ document.querySelector('#startGameBtn').addEventListener('click', startGame);
 
 function startGame() {
   console.log('startGame');
+ 
 
   player = document.querySelector('#playerInput').value;    // Sparar spelarens namn
 
   document.querySelector('#player').style.display = 'none'; // Namnet döljs
-
+ 
   nextQuestion();
 }
 
