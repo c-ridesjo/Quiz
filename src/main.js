@@ -32,7 +32,7 @@ function checkChoice(e) {       // Skapar funktion för val av kategori
   if (userCategory === 'Film') {
     document.querySelector('h1').style.display = 'none';
     console.log('Film');        // Skriv ut vilken kategori som valts 
-    document.querySelector('#showChoice').innerHTML = `Film`;
+    document.querySelector('#showChoice').innerHTML = `Film`;     // Visar vilken kategori som valts  
   }
   if (userCategory === 'Musik') {
     document.querySelector('h1').style.display = 'none';
@@ -197,17 +197,17 @@ function checkAnswer(e) {
   if (userAnswer === correctAnswer) {     // Jämför spelarens svar med det rätta svaret
     points++,     // Ger 1 poäng vid rätt svar
     console.log('Rätt svar!')
-    document.getElementById('answer1').style.backgroundColor = 'green';
-    document.getElementById('answer2').style.backgroundColor = 'green';
-    document.getElementById('answer3').style.backgroundColor = 'green';
+    document.getElementById('answer1').style.color = 'green';
+    document.getElementById('answer2').style.color = 'green';
+    document.getElementById('answer3').style.color = 'green';
     
   } 
   else {
     points--,     // Ger -1 poäng vid fel svar
     console.log('Fel svar!'),
-    document.getElementById('answer1').style.backgroundColor = 'red';
-    document.getElementById('answer2').style.backgroundColor = 'red';
-    document.getElementById('answer3').style.backgroundColor = 'red'; 
+    document.getElementById('answer1').style.color = 'red';
+    document.getElementById('answer2').style.color = 'red';
+    document.getElementById('answer3').style.color = 'red'; 
   }
   nextQuestion();
 }
@@ -243,5 +243,6 @@ function gameOver() {
   document.querySelector('#questionsContainer').classList.add('hidden');
   document.querySelector('#nextQuestBtn').style.display = 'none'; 
   document.querySelector('#pointsContainer').innerHTML = `Du fick ${points} poäng!`;
+  document.querySelector('#categoryContainer').style.display = 'none';
 }
 
