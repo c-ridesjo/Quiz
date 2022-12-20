@@ -30,16 +30,23 @@ function checkChoice(e) {       // Skapar funktion för val av kategori
 
   const userChoice = category[currentTarget].userChoice;
   if (userCategory === 'Film') {
+    document.querySelector('h1').style.display = 'none';
     console.log('Film');        // Skriv ut vilken kategori som valts 
+    document.querySelector('#showChoice').innerHTML = `Film`;
   }
   if (userCategory === 'Musik') {
+    document.querySelector('h1').style.display = 'none';
     console.log('Musik');
+    document.querySelector('#showChoice').innerHTML = `Musik`;
   }
   if (userCategory === 'Familj') {
+    document.querySelector('h1').style.display = 'none';
    console.log('Familj');      
+   document.querySelector('#showChoice').innerHTML = `Familj`;
   }
+  document.querySelector('#categoryContainer').style.display = 'none';
 }
-    
+   
 let player = 0;
 
 document.querySelector('#startGameBtn').addEventListener('click', startGame);
@@ -237,3 +244,4 @@ function gameOver() {
   document.querySelector('#nextQuestBtn').style.display = 'none'; 
   document.querySelector('#pointsContainer').innerHTML = `Du fick ${points} poäng!`;
 }
+
