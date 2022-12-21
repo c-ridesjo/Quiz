@@ -53,7 +53,6 @@ document.querySelector('#startGameBtn').addEventListener('click', startGame);
 
 function startGame() {
   console.log('startGame');
- 
 
   player = document.querySelector('#playerInput').value;    // Sparar spelarens namn
 
@@ -179,6 +178,19 @@ const questionsChoice3 = [        // Frågor för kategori 3 (familj)
   }
 ];
 
+function shuffleArray(arrayToShuffle) {
+  for (let i = arrayToShuffle.length - 1; i > 0; i--) {
+    let randomPosition = Math.floor(Math.random() * (i + 1));
+    let temp = arrayToShuffle[i];
+
+    arrayToShuffle[i] = arrayToShuffle[randomPosition];
+    arrayToShuffle[randomPosition] = temp;
+  }
+  return arrayToShuffle;
+}
+
+console.log(shuffleArray(questionsChoice1));
+
 const questionDiv = document.querySelector('#questionText');
 const answer1Btn = document.querySelector('#answer1');
 const answer2Btn = document.querySelector('#answer2');
@@ -245,4 +257,5 @@ function gameOver() {
   document.querySelector('#pointsContainer').innerHTML = `Du fick ${points} poäng!`;
   document.querySelector('#categoryContainer').style.display = 'none';
 }
+
 
