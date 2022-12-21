@@ -57,8 +57,9 @@ function startGame() {
   player = document.querySelector('#playerInput').value;    // Sparar spelarens namn
 
   document.querySelector('#player').style.display = 'none'; // Namnet döljs
- 
+
   nextQuestion();
+  
 }
 
 const questionsChoice1 = [           // Frågor för kategori 1 (film)
