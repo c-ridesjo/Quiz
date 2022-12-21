@@ -222,7 +222,7 @@ function checkAnswer(e) {
     document.getElementById('answer2').style.color = 'red';
     document.getElementById('answer3').style.color = 'red'; 
   }
-  nextQuestion();
+ // nextQuestion();
 }
 
 document.querySelector('#nextQuestBtn').addEventListener('click', startGame);
@@ -246,6 +246,7 @@ document.querySelector('#restartGameBtn').addEventListener('click', restartGame)
 function restartGame() {
   document.querySelector('#gameOver').style.display = 'none';
   document.querySelector('#questionsContainer').classList.remove('hidden');
+  document.querySelector('#nextQuestBtn').style.display = 'block';
   currentQuestion = 0;
   points = 0;
   nextQuestion();
