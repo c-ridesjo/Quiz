@@ -12,10 +12,14 @@ const category = [
   }  
 ];
 
+document.querySelector('#showTime').style.display = 'none';
+document.querySelector('#timer').style.display = 'none'; 
+
 const categoryDiv = document.querySelector('#categoryText');      // Skapar hållare för kategorier
 const choice1Btn = document.querySelector('#choice1');        // Skapar knappar för kategorier
 const choice2Btn = document.querySelector('#choice2');
 const choice3Btn = document.querySelector('#choice3');
+const resultBtn = document.querySelector('#resultBtn');
 const questionText = document.querySelector('#questionText');
 
 choice1Btn.addEventListener('click', checkChoice);      // Lägger till click-event till knapparna
@@ -58,7 +62,9 @@ function startGame() {
 
   document.querySelector('#player').style.display = 'none'; // Namnet döljs
 
-  nextQuestion();
+  nextQuestion();  
+  document.querySelector('#showTime').style.display = 'block';
+  document.querySelector('#timer').style.display = 'block';
   
 }
 
@@ -226,6 +232,8 @@ function checkAnswer(e) {
 }
 
 document.querySelector('#nextQuestBtn').addEventListener('click', startGame);
+document.querySelector('#showTime').style.display = 'none';
+document.querySelector('#timer').style.display = 'none';
 
 function nextQuestion() {
   if (currentQuestion >= questionsChoice1.length) {     // När frågorna är slut
@@ -239,7 +247,18 @@ function nextQuestion() {
   answer3Btn.innerHTML = questionsChoice1[currentQuestion].answerOptions[2];
 
   currentQuestion++;      // currentQuestion + 1 (går vidare till nästa fråga)
+
 }
+document.querySelector('#resultBtn').addEventListener('click', gameOver);
+
+/* function showResult() {
+  if (currentQuestion === questionsChoice1.length) {
+    document.querySelector('#resultBtn').style.display = 'block';
+    document.querySelector('#nextQuestBtn').style.display = 'none';
+    gameOver();
+    return;
+  }
+} */
 
 document.querySelector('#restartGameBtn').addEventListener('click', restartGame);
 
@@ -250,14 +269,25 @@ function restartGame() {
   currentQuestion = 0;
   points = 0;
   nextQuestion();
+  document.querySelector('#showTime').style.display = 'block';
+  document.querySelector('#timer').style.display = 'block';
 }
 
 function gameOver() {
   document.querySelector('#gameOver').style.display = 'block';
+
+  if (currentQuestion === questionsChoice1.length) {
+    document.querySelector('#resultBtn').style.display = 'block';
+    document.querySelector('#nextQuestBtn').style.display = 'none';
+    gameOver();
+    return;
+  }
+  
   document.querySelector('#questionsContainer').classList.add('hidden');
   document.querySelector('#nextQuestBtn').style.display = 'none'; 
   document.querySelector('#pointsContainer').innerHTML = `Du fick ${points} poäng!`;
-  document.querySelector('#categoryContainer').style.display = 'none';
+  document.querySelector('#showTime').style.display = 'none';
+  document.querySelector('#timer').style.display = 'none';
+
+
 }
-
-

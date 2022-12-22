@@ -20,7 +20,7 @@
       </div>
     </section>
 
-    <section class="startGamePage">
+    <div class="startGamePage">
         <div id="player">
           <div id="showChoice"></div> 
           <label>
@@ -28,7 +28,7 @@
           </label>
           <button id="startGameBtn">Starta</button>
         </div>
-    </section>
+      </div>
 
     <section class="questionPage">
       <div id="questionsContainer"> 
@@ -40,8 +40,13 @@
           </div>      
        </div>
       <div class ="buttons"></div>
-      <span id="showTime">Återstående tid:</span><br/><span id="timer"></span>
+
         <button id="nextQuestBtn">Nästa fråga</button>
+        <button id="resultBtn">Visa resultat</button> 
+        <div class="timeContainer">
+          <span id="showTime">Återstående tid</span><br/>
+          <span id="timer">Nedräkning</span>
+        </div>  
     </section>
         
     <div id="gameOver" class="hidden">
