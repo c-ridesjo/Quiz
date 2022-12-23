@@ -1,4 +1,5 @@
 import './style/style.scss';
+import { gsap } from 'gsap';
 
 const category = [
   {
@@ -36,12 +37,15 @@ function checkChoice(e) {       // Skapar funktion för val av kategori
   if (userCategory === 'Film') {
     document.querySelector('h1').style.display = 'none';
     console.log('Film');        // Skriv ut vilken kategori som valts 
-    document.querySelector('#showChoice').innerHTML = `Film`;     // Visar vilken kategori som valts  
+    document.querySelector('#showChoice').innerHTML = `Film`;     // Visar vilken kategori som valts 
+    gsap.to(('#showChoice'), { opacity: 0.5, delay: 1, repeat: -1, yoyo: true });
+   
   }
   if (userCategory === 'Musik') {
     document.querySelector('h1').style.display = 'none';
     console.log('Musik');
     document.querySelector('#showChoice').innerHTML = `Musik`;
+    gsap.to(('#showChoice'), { opacity: 0.5, delay: 1, repeat: -1, yoyo: true });
   }
   if (userCategory === 'Familj') {
     document.querySelector('h1').style.display = 'none';
@@ -49,6 +53,7 @@ function checkChoice(e) {       // Skapar funktion för val av kategori
    document.querySelector('#showChoice').innerHTML = `Familj`;
   }
   document.querySelector('#categoryContainer').style.display = 'none';
+  gsap.to(('#showChoice'), { opacity: 0.5, delay: 1, repeat: -1, yoyo: true });
 }
    
 let player = 0;
@@ -216,9 +221,9 @@ function checkAnswer(e) {
   if (userAnswer === correctAnswer) {     // Jämför spelarens svar med det rätta svaret
     points++,     // Ger 1 poäng vid rätt svar
     console.log('Rätt svar!')
-    document.getElementById('answer1').style.color = 'green';
-    document.getElementById('answer2').style.color = 'green';
-    document.getElementById('answer3').style.color = 'green';
+    document.getElementById('answer1').style.color = 'lightgreen';
+    document.getElementById('answer2').style.color = 'lightgreen';
+    document.getElementById('answer3').style.color = 'lightgreen';
     
   } 
   else {
@@ -276,12 +281,12 @@ function restartGame() {
 function gameOver() {
   document.querySelector('#gameOver').style.display = 'block';
 
-  if (currentQuestion === questionsChoice1.length) {
+  /*if (currentQuestion === questionsChoice1.length) {
     document.querySelector('#resultBtn').style.display = 'block';
     document.querySelector('#nextQuestBtn').style.display = 'none';
     gameOver();
     return;
-  }
+  } */
   
   document.querySelector('#questionsContainer').classList.add('hidden');
   document.querySelector('#nextQuestBtn').style.display = 'none'; 
@@ -289,5 +294,6 @@ function gameOver() {
   document.querySelector('#showTime').style.display = 'none';
   document.querySelector('#timer').style.display = 'none';
 
+  gsap.to(('#pointsContainer'), { opacity: 0.5, delay: 1, repeat: -1, yoyo: true });
 
 }

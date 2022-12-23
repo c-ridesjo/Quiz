@@ -77,7 +77,7 @@ h1 {
 #showChoice {
   font-family: 'Fredoka One', sans-serif;
   font-size: 4rem;
-  display: flex;
+  display: block;
   color:rgb(28 239 35);
   margin-top: 0.2rem;
   margin-bottom: 3rem;
@@ -181,8 +181,9 @@ h1 {
   display: none;
 }
 
-.points-container {
-  font-size: 0.2rem;
+#pointsContainer {
+  font-size: 2rem;
+  color: yellow;
 }
 
 /*
