@@ -281,12 +281,12 @@ function restartGame() {
 function gameOver() {
   document.querySelector('#gameOver').style.display = 'block';
 
-  /*if (currentQuestion === questionsChoice1.length) {
+  if (currentQuestion === questionsChoice1.length) {
     document.querySelector('#resultBtn').style.display = 'block';
     document.querySelector('#nextQuestBtn').style.display = 'none';
     gameOver();
     return;
-  } */
+  } 
   
   document.querySelector('#questionsContainer').classList.add('hidden');
   document.querySelector('#nextQuestBtn').style.display = 'none'; 

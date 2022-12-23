@@ -11,7 +11,6 @@ body {
   margin-block: 20px;
   display: flex;
   margin: auto;
-  gap: 20px;
   justify-content: space-around;
 }
 
@@ -37,26 +36,39 @@ h1 {
   display: block;
 }
 
-#categoryText, #questionText {        
+#categoryContainer {
+  display: block;
+  margin-left: 1rem;
+}
+
+#categoryText {        
   font-size: 1.6rem;
   margin-top: 2.0rem;
-  margin-left: 1.0rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.4rem;
+  display: block;
   text-align: center;
+}
+
+#questionText {        
+  font-size: 1.6rem;
+  margin-top: 2.0rem;
+  margin-left: 1.4rem;
+  margin-bottom: 0.4rem;
+  display: block;
+  text-align: center;
+  width: 80%;
+  height: 4rem;
+  padding: 1rem;
 }
 
 .questionPage {
   display: block;
-  
+  margin-top: 4rem;  
 }
 
-#questionText {
-  font-size: 1.6rem;
-  margin-top: 2.8rem;
-  margin-left: 1.0rem;
-  margin-bottom: 2.2rem;
-  text-align: center;
-  padding: 10px;
+#questionContainer {
+  margin-top: 4rem;
+  display: block;  
 }
 
 #choice1, #choice2, #choice3 {
@@ -88,7 +100,7 @@ h1 {
 #player {
   margin-top: 5rem;
   margin-bottom: 5rem;
-  margin-left: 2rem;
+  margin-left: 1.4rem;
   justify-content: center;
   font-size: 1.6rem;
 }
@@ -159,11 +171,17 @@ h1 {
   text-align: center;
 }
 
+#answerContainer {
+  margin-top: 0.2rem;
+  margin-bottom: 2rem;
+  padding: auto;
+}
+
 #answer1, #answer2, #answer3 {
   margin-top: 1.5rem;
   margin-left: 2.0rem;
   font-size: 1.4rem;
-  width: 80%;
+  width: 20rem;
   height: 3rem;
   background-color: rgb(22 2 50);
   border-color: white;
@@ -173,8 +191,8 @@ h1 {
   text-align: center;
   display: inline-block;
   cursor: pointer;
-  justify-content: center;
-  flex-direction: row;
+  //justify-content: center;
+  //flex-direction: row;
 }
 
 .hidden {
