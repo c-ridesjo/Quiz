@@ -1,6 +1,14 @@
 import './style/style.scss';
 import { gsap } from 'gsap';
 
+/* function chooseCategory() {
+  document.querySelector('#questionsContainer').classList.add('hidden');
+  document.querySelector('#nextQuestBtn').style.display = 'none'; 
+  document.querySelector('#showTime').style.display = 'none';
+  document.querySelector('#timer').style.display = 'none';
+  
+}       Anropa denna funktion i stället för nextQuestion i funktionen RestartGame  */
+
 const category = [
   {
     categoryText: 'Välj kategori:',
@@ -21,6 +29,7 @@ const choice1Btn = document.querySelector('#choice1');        // Skapar knappar 
 const choice2Btn = document.querySelector('#choice2');
 const choice3Btn = document.querySelector('#choice3');
 const questionText = document.querySelector('#questionText');
+let haveAnswered = false;
 
 choice1Btn.addEventListener('click', checkChoice);      // Lägger till click-event till knapparna
 choice2Btn.addEventListener('click', checkChoice);
@@ -219,21 +228,23 @@ answer3Btn.addEventListener('click', checkAnswer);
 let points = 0;
 
 function checkAnswer(e) {
-  const userAnswer = e.currentTarget.innerHTML;     // Vilket svarsalternativ spelaren väljer
+  if (haveAnswered === false) {     // Om frågan inte har besvarats, ska nedan kod köras.
+    const userAnswer = e.currentTarget.innerHTML;     // Vilket svarsalternativ spelaren väljer
 
-  const correctAnswer = questionsChoice1[currentQuestion - 1].correctAnswer;    // -1 för att få rätt svar innan nästa fråga
-  if (userAnswer === correctAnswer) {     // Jämför spelarens svar med det rätta svaret
-    points++,     // Ger 1 poäng vid rätt svar
-    console.log('Rätt svar!')
-    e.currentTarget.style.color = 'lightgreen';
-    
-  } 
-  else {
-    points--,     // Ger -1 poäng vid fel svar
-    console.log('Fel svar!'),
-    e.currentTarget.style.color = 'red';
+    const correctAnswer = questionsChoice1[currentQuestion - 1].correctAnswer;    // -1 för att få rätt svar innan nästa fråga
+    if (userAnswer === correctAnswer) {     // Jämför spelarens svar med det rätta svaret
+      points++,     // Ger 1 poäng vid rätt svar
+      console.log('Rätt svar!')
+      e.currentTarget.style.color = 'lightgreen';
+      
+    } 
+    else {
+      points--,     // Ger -1 poäng vid fel svar
+      console.log('Fel svar!'),
+      e.currentTarget.style.color = 'red';
+    }
+    haveAnswered = true;      // Sätts till sant för att inte kunna svara på frågan igen
   }
- // nextQuestion();
 }
 
 document.querySelector('#nextQuestBtn').addEventListener('click', startGame);
@@ -241,12 +252,16 @@ document.querySelector('#showTime').style.display = 'none';
 document.querySelector('#timer').style.display = 'none';
 
 function nextQuestion() {
+  haveAnswered = false;
   if (currentQuestion >= questionsChoice1.length) {     // När frågorna är slut
     gameOver();
     return;
   }
 
-  //e.currentTarget.style.color = 'white';              ???
+  document.getElementById('answer1').style.color = 'white';    
+  document.getElementById('answer2').style.color = 'white';   
+  document.getElementById('answer3').style.color = 'white';           
+  
 
   questionText.innerHTML = questionsChoice1[currentQuestion].questionText;
   answer1Btn.innerHTML = questionsChoice1[currentQuestion].answerOptions[0];
@@ -267,9 +282,9 @@ function restartGame() {
   document.querySelector('#nextQuestBtn').style.display = 'block';
   currentQuestion = 0;
   points = 0;
-  nextQuestion();
   document.querySelector('#showTime').style.display = 'block';
   document.querySelector('#timer').style.display = 'block';
+  nextQuestion();     // Här vill jag komma till kategorisidan i stället
 }
 
 function gameOver() {
