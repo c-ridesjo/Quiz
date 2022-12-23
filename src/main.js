@@ -256,14 +256,14 @@ function nextQuestion() {
 }
 document.querySelector('#resultBtn').addEventListener('click', gameOver);
 
-/* function showResult() {
+ function showResult() {
   if (currentQuestion === questionsChoice1.length) {
     document.querySelector('#resultBtn').style.display = 'block';
     document.querySelector('#nextQuestBtn').style.display = 'none';
     gameOver();
     return;
   }
-} */
+} 
 
 document.querySelector('#restartGameBtn').addEventListener('click', restartGame);
 
