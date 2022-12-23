@@ -36,12 +36,12 @@ h1 {
   display: block;
 }
 
-#categoryContainer {
+.categoryContainer {
   display: block;
   margin-left: 1rem;
 }
 
-#categoryText {        
+.categoryText {        
   font-size: 1.6rem;
   margin-top: 2.0rem;
   margin-bottom: 0.4rem;
@@ -49,7 +49,7 @@ h1 {
   text-align: center;
 }
 
-#questionText {        
+.questionText {        
   font-size: 1.6rem;
   margin-top: 2.0rem;
   margin-left: 1.4rem;
@@ -66,12 +66,12 @@ h1 {
   margin-top: 4rem;  
 }
 
-#questionContainer {
+.questionContainer {
   margin-top: 4rem;
   display: block;  
 }
 
-#choice1, #choice2, #choice3 {
+.choice1, .choice2, .choice3 {
   margin-top: 1.5rem;
   font-size: 1.4rem;
   width: 7rem;
@@ -86,7 +86,7 @@ h1 {
   cursor: pointer;
 }
 
-#showChoice {
+.showChoice {
   font-family: 'Fredoka One', sans-serif;
   font-size: 4rem;
   display: block;
@@ -98,7 +98,7 @@ h1 {
   text-align: center;
 }
 
-#player {
+.player {
   margin-top: 5rem;
   margin-bottom: 5rem;
   margin-left: 3rem;
@@ -106,7 +106,7 @@ h1 {
   font-size: 1.6rem;
 }
 
-#playerInput {
+.playerInput {
   font-size: 1.4rem;
   margin-top: 1rem;  
   display: block;  
@@ -118,7 +118,7 @@ h1 {
   display: block;
 }
 
-#startGameBtn {  
+.startGameBtn {  
   background-color: rgb(239 28 183);
   margin-top: 4rem;
   margin-left: 5rem;
@@ -132,7 +132,7 @@ h1 {
   padding: 10px;
 }
 
-#nextQuestBtn {  
+.nextQuestBtn {  
   background-color: rgb(239 28 183);
   margin-top: 1rem;
   margin-left: 6.5rem;
@@ -146,7 +146,7 @@ h1 {
   padding: 5px;
 }
 
-#resultBtn {
+.resultBtn {
   display: none;
   background-color: rgb(239 28 183);
   margin-top: 2rem;
@@ -161,7 +161,7 @@ h1 {
   padding: 10px;
 }
 
-#restartGameBtn {
+.restartGameBtn {
   background-color: rgb(239 28 183);
   margin-top: 3rem;
   margin-left: 2.0rem;
@@ -185,13 +185,13 @@ h1 {
   text-align: center;
 }
 
-#answerContainer {
+.answerContainer {
   margin-top: 0.2rem;
   margin-bottom: 2rem;
   padding: auto;
 }
 
-#answer1, #answer2, #answer3 {
+.answer1, .answer2, .answer3 {
   margin-top: 1.5rem;
   margin-left: 2.0rem;
   font-size: 1.4rem;
@@ -213,66 +213,7 @@ h1 {
   display: none;
 }
 
-#pointsContainer {
+.pointsContainer {
   font-size: 2rem;
   color: yellow;
 }
-
-/*
-:root {
-  // TODO: Går bra att radera kod även här!
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: rem(16px);
-  line-height: 24px;
-  font-weight: 400;
-  color-scheme: light dark;
-  color: rgb(255 255 255 / 87%);
-  background-color: #242424;
-  font-synthesis: none;
-  text-rendering: optimizelegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-size-adjust: 100%;
-}
-
-
-
-.app {
-  margin-block: 20px;
-  display: flex;
-  gap: 20px;
-  justify-content: space-around;
-
-  .card {
-    $card-size: 250px;
-    width: 0.6413 * $card-size;
-    height: $card-size;
-    cursor: pointer;
-    background: #102a3f;
-    border-radius: 8px;
-    display: flex;
-    font-weight: bold;
-    align-items: center;
-    justify-content: space-around;
-    text-align: center;
-    box-shadow: 5px 5px 5px rgb(0 0 0 / 20%);
-
-    .front {
-      font-size: rem(50px);
-    }
-
-    .back {
-      display: none;
-    }
-
-    &.visible {
-      .front {
-        display: none;
-      }
-
-      .back {
-        display: block;
-      }
-    }
-  }
-} */
