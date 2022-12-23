@@ -7,7 +7,7 @@ import { gsap } from 'gsap';
   document.querySelector('#showTime').style.display = 'none';
   document.querySelector('#timer').style.display = 'none';
   
-}       Anropa denna funktion i stället för nextQuestion i funktionen RestartGame  */
+}       Anropa denna funktion i stället för nextQuestion i funktionen RestartGame??  */
 
 const category = [
   {
@@ -284,7 +284,8 @@ function restartGame() {
   points = 0;
   document.querySelector('#showTime').style.display = 'block';
   document.querySelector('#timer').style.display = 'block';
-  nextQuestion();     // Här vill jag komma till kategorisidan i stället
+  // shuffleArray(questionsChoice1);     Denna rad behövs inte om jag startar från kategorisidan 
+  nextQuestion();     // Här vill jag komma till kategorisidan i stället för frågesidan
 }
 
 function gameOver() {
