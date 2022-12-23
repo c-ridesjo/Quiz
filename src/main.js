@@ -20,7 +20,6 @@ const categoryDiv = document.querySelector('#categoryText');      // Skapar hål
 const choice1Btn = document.querySelector('#choice1');        // Skapar knappar för kategorier
 const choice2Btn = document.querySelector('#choice2');
 const choice3Btn = document.querySelector('#choice3');
-const resultBtn = document.querySelector('#resultBtn');
 const questionText = document.querySelector('#questionText');
 
 choice1Btn.addEventListener('click', checkChoice);      // Lägger till click-event till knapparna
@@ -32,6 +31,8 @@ let currentQuestion = 0;
 
 function checkChoice(e) {       // Skapar funktion för val av kategori
   const userCategory = e.currentTarget.innerHTML;
+  document.querySelector('.startGamePage').style.display = 'block';
+  document.querySelector('.questionPage').style.display = 'block';
 
   const userChoice = category[currentTarget].userChoice;
   if (userCategory === 'Film') {
@@ -59,6 +60,9 @@ function checkChoice(e) {       // Skapar funktion för val av kategori
 let player = 0;
 
 document.querySelector('#startGameBtn').addEventListener('click', startGame);
+
+document.querySelector('.startGamePage').style.display = 'none';
+document.querySelector('.questionPage').style.display = 'none';
 
 function startGame() {
   console.log('startGame');
@@ -221,17 +225,13 @@ function checkAnswer(e) {
   if (userAnswer === correctAnswer) {     // Jämför spelarens svar med det rätta svaret
     points++,     // Ger 1 poäng vid rätt svar
     console.log('Rätt svar!')
-    document.getElementById('answer1').style.color = 'lightgreen';
-    document.getElementById('answer2').style.color = 'lightgreen';
-    document.getElementById('answer3').style.color = 'lightgreen';
+    e.currentTarget.style.color = 'lightgreen';
     
   } 
   else {
     points--,     // Ger -1 poäng vid fel svar
     console.log('Fel svar!'),
-    document.getElementById('answer1').style.color = 'red';
-    document.getElementById('answer2').style.color = 'red';
-    document.getElementById('answer3').style.color = 'red'; 
+    e.currentTarget.style.color = 'red';
   }
  // nextQuestion();
 }
@@ -246,24 +246,18 @@ function nextQuestion() {
     return;
   }
 
+  //e.currentTarget.style.color = 'white';              ???
+
   questionText.innerHTML = questionsChoice1[currentQuestion].questionText;
   answer1Btn.innerHTML = questionsChoice1[currentQuestion].answerOptions[0];
   answer2Btn.innerHTML = questionsChoice1[currentQuestion].answerOptions[1];
   answer3Btn.innerHTML = questionsChoice1[currentQuestion].answerOptions[2];
 
   currentQuestion++;      // currentQuestion + 1 (går vidare till nästa fråga)
-
+ 
 }
 document.querySelector('#resultBtn').addEventListener('click', gameOver);
 
- function showResult() {
-  if (currentQuestion === questionsChoice1.length) {
-    document.querySelector('#resultBtn').style.display = 'block';
-    document.querySelector('#nextQuestBtn').style.display = 'none';
-    gameOver();
-    return;
-  }
-} 
 
 document.querySelector('#restartGameBtn').addEventListener('click', restartGame);
 
@@ -280,20 +274,23 @@ function restartGame() {
 
 function gameOver() {
   document.querySelector('#gameOver').style.display = 'block';
-
   if (currentQuestion === questionsChoice1.length) {
     document.querySelector('#resultBtn').style.display = 'block';
     document.querySelector('#nextQuestBtn').style.display = 'none';
-    gameOver();
     return;
-  } 
-  
+  }   
+}
+
+const resultBtn = document.querySelector('#resultBtn');
+resultBtn.addEventListener('click', showResult);
+
+function showResult() {
   document.querySelector('#questionsContainer').classList.add('hidden');
   document.querySelector('#nextQuestBtn').style.display = 'none'; 
   document.querySelector('#pointsContainer').innerHTML = `Du fick ${points} poäng!`;
   document.querySelector('#showTime').style.display = 'none';
   document.querySelector('#timer').style.display = 'none';
-
+  document.querySelector('#resultBtn').style.display = 'none';
+  
   gsap.to(('#pointsContainer'), { opacity: 0.5, delay: 1, repeat: -1, yoyo: true });
-
 }
