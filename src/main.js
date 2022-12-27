@@ -1,13 +1,12 @@
 import './style/style.scss';
 import { gsap } from 'gsap';
 
-/* function chooseCategory() {
-  document.querySelector('#questionsContainer').classList.add('hidden');
-  document.querySelector('#nextQuestBtn').style.display = 'none'; 
-  document.querySelector('#showTime').style.display = 'none';
-  document.querySelector('#timer').style.display = 'none';
-  
-}       Anropa denna funktion i stället för nextQuestion i funktionen RestartGame??  */
+function chooseCategory() {
+  //document.querySelector('frontPage').style.display = 'block';   ??
+  //document.querySelector('categoryText').style.display = 'block';
+  //document.querySelector('choice1', 'choice2', 'choice3').style.display = 'block';
+ 
+}       /* Anropa denna funktion i stället för nextQuestion i funktionen RestartGame??  */
 
 const category = [
   {
@@ -24,7 +23,7 @@ const category = [
 document.querySelector('#showTime').style.display = 'none';
 document.querySelector('#timer').style.display = 'none'; 
 
-const categoryDiv = document.querySelector('#categoryText');      // Skapar hållare för kategorier
+const categoryDiv = document.querySelector('categoryContainer');      // Skapar hållare för kategorier
 const choice1Btn = document.querySelector('#choice1');        // Skapar knappar för kategorier
 const choice2Btn = document.querySelector('#choice2');
 const choice3Btn = document.querySelector('#choice3');
@@ -285,7 +284,7 @@ function restartGame() {
   document.querySelector('#showTime').style.display = 'block';
   document.querySelector('#timer').style.display = 'block';
   // shuffleArray(questionsChoice1);     Denna rad behövs inte om jag startar från kategorisidan 
-  nextQuestion();     // Här vill jag komma till kategorisidan i stället för frågesidan
+  chooseCategory();     // Här vill jag komma till kategorisidan i stället för frågesidan
 }
 
 function gameOver() {
