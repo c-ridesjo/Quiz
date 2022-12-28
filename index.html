@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,53 +9,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projekt</title>
 </head>
+
 <body>
   <main>
     <h1>FamiljeQuizzet</h1>
     <section class="frontPage">
       <div id="categoryContainer" class="categoryContainer">
-        <div id="categoryText" class="categoryText">Välj kategori!</div> 
-          <button id="choice1" class="choice1">Film</button>
-          <button id="choice2" class="choice2">Musik</button>
-          <button id="choice3" class="choice3">Familj</button>
+        <div id="categoryText" class="categoryText">Välj kategori!</div>
+        <button id="choice1" class="choice1">Film</button>
+        <button id="choice2" class="choice2">Musik</button>
+        <button id="choice3" class="choice3">Familj</button>
       </div>
     </section>
 
     <div class="startGamePage">
-        <div id="player" class="player">
-          <div id="showChoice" class="showChoice"></div> 
-          <label>
-            Skriv ditt namn:<br><input type="text" id="playerInput" class="playerInput" value=" "><br>
-          </label>
-          <button id="startGameBtn" class="startGameBtn">Starta</button>
-        </div>
+      <div id="player" class="player">
+        <div id="showChoice" class="showChoice"></div>
+        <label>
+          Skriv ditt namn:<br><input type="text" id="playerInput" class="playerInput" value=" "><br>
+        </label>
+        <button id="startGameBtn" class="startGameBtn">Starta</button>
       </div>
+    </div>
 
     <section class="questionPage">
-      <div id="questionsContainer" class="questionsContainer"> 
-        <div id="questionText" class="questionText"></div>     <!--Frågor-->       
-          <div id= "answerContainer" class= "answerContainer">
-            <button id="answer1" class="answer1"></button> 
-            <button id="answer2" class="answer2"></button>
-            <button id="answer3" class="answer3"></button>  
-          </div>      
-       </div>
-      <div class ="buttons"></div>
+      <div id="questionsContainer" class="questionsContainer">
+        <div id="questionText" class="questionText"></div> <!--Frågor-->
+        <div id="answerContainer" class="answerContainer">
+          <button id="answer1" class="answer1"></button>
+          <button id="answer2" class="answer2"></button>
+          <button id="answer3" class="answer3"></button>
+        </div>
+      </div>
+      <div class="buttons"></div>
 
-        <button id="nextQuestBtn" class="nextQuestBtn">Nästa fråga</button>
-        <button id="resultBtn" class="resultBtn">Visa resultat</button> 
-        <div class="timeContainer">
-          <span id="showTime" class="showTime">Återstående tid</span>
-          <span id="timer" class="timer">Nedräkning</span>
-        </div>  
+      <button id="nextQuestBtn" class="nextQuestBtn">Nästa fråga</button>
+      <button id="resultBtn" class="resultBtn">Visa resultat</button>
+      <div class="timeContainer">
+        <span id="showTime" class="showTime">Återstående tid</span>
+        <span id="timer" class="timer">Nedräkning</span>
+      </div>
     </section>
-        
+
     <div id="gameOver" class="hidden">
       Spelet är slut!
-      <p id="pointsContainer" class="pointsContainer"></p>      
-        <button id="restartGameBtn" class="restartGameBtn">Spela igen</button>      
+      <p id="pointsContainer" class="pointsContainer"></p>
+      <button id="restartGameBtn" class="restartGameBtn">Spela igen</button>
     </div>
     <script type="module" src="src/main.js"></script>
   </main>
 </body>
+
 </html>

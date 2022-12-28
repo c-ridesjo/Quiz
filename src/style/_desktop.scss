@@ -1,6 +1,6 @@
-@media screen and (max-width:1200px) {
+@media screen and (min-width:1025px) and (max-width:1200px) {
     /* CSS för desktop med maxstorlek 1200px */
-    
+
     body {
         background-color: rgb(22 2 50);
         color: white;
@@ -12,44 +12,44 @@
         display: flex;
         margin: auto;
         justify-content: space-around;
-      }
-      
-      main {
+    }
+
+    main {
         font-size: 1.2rem;
         margin-bottom: 4rem;
-      }
-       
-      h1 {
+    }
+
+    h1 {
         font-family: 'Fredoka One', sans-serif;
         font-size: 2.4rem;
         display: block;
-        color:rgb(239 28 183);
+        color: rgb(239 28 183);
         padding: 35px;
         text-align: center;
-      }
-      
-      .frontPage {
+    }
+
+    .frontPage {
         display: block;
-      }
-      
-      .startGamePage {
+    }
+
+    .startGamePage {
         display: block;
-      }
-      
-      .categoryContainer {
+    }
+
+    .categoryContainer {
         display: block;
         margin-left: 1rem;
-      }
-      
-      .categoryText {        
+    }
+
+    .categoryText {
         font-size: 1.6rem;
         margin-top: 2.0rem;
         margin-bottom: 0.4rem;
         display: block;
         text-align: center;
-      }
-      
-      .questionText {        
+    }
+
+    .questionText {
         font-size: 1.6rem;
         margin-top: 2.0rem;
         margin-left: 1.4rem;
@@ -59,19 +59,21 @@
         width: 80%;
         height: 4rem;
         padding: 1rem;
-      }
-      
-      .questionPage {
+    }
+
+    .questionPage {
         display: block;
-        margin-top: 4rem;  
-      }
-      
-      .questionContainer {
         margin-top: 4rem;
-        display: block;  
-      }
-      
-      .choice1, .choice2, .choice3 {
+    }
+
+    .questionContainer {
+        margin-top: 4rem;
+        display: block;
+    }
+
+    .choice1,
+    .choice2,
+    .choice3 {
         margin-top: 1.5rem;
         font-size: 1.4rem;
         width: 7rem;
@@ -84,41 +86,41 @@
         text-align: center;
         display: inline-block;
         cursor: pointer;
-      }
-      
-      .showChoice {
+    }
+
+    .showChoice {
         font-family: 'Fredoka One', sans-serif;
         font-size: 4rem;
         display: block;
-        color:rgb(28 239 35);
+        color: rgb(28 239 35);
         margin-top: 0.2rem;
         margin-bottom: 3rem;
         margin-right: 2.2rem;
         padding: 2rem;
         text-align: center;
-      }
-      
-      .player {
+    }
+
+    .player {
         margin-top: 5rem;
         margin-bottom: 5rem;
         margin-left: 3rem;
         justify-content: center;
         font-size: 1.6rem;
-      }
-      
-      .playerInput {
+    }
+
+    .playerInput {
         font-size: 1.4rem;
-        margin-top: 1rem;  
-        display: block;  
-      }
-      
-      .timeContainer {
+        margin-top: 1rem;
+        display: block;
+    }
+
+    .timeContainer {
         font-size: 1rem;
         margin-left: 2rem;
         display: block;
-      }
-      
-      .startGameBtn {  
+    }
+
+    .startGameBtn {
         background-color: rgb(239 28 183);
         margin-top: 4rem;
         margin-left: 5rem;
@@ -126,13 +128,13 @@
         font-size: 1.4rem;
         width: 7rem;
         height: 3rem;
-        border-radius: 4px; 
+        border-radius: 4px;
         text-align: center;
         cursor: pointer;
         padding: 10px;
-      }
-      
-      .nextQuestBtn {  
+    }
+
+    .nextQuestBtn {
         background-color: rgb(239 28 183);
         margin-top: 1rem;
         margin-left: 6.5rem;
@@ -140,13 +142,13 @@
         font-size: 1.4rem;
         width: 10rem;
         height: 3rem;
-        border-radius: 4px; 
+        border-radius: 4px;
         text-align: center;
         cursor: pointer;
         padding: 5px;
-      }
-      
-      .resultBtn {
+    }
+
+    .resultBtn {
         display: none;
         background-color: rgb(239 28 183);
         margin-top: 2rem;
@@ -155,27 +157,27 @@
         font-size: 1.4rem;
         width: 10rem;
         height: 3rem;
-        border-radius: 4px; 
+        border-radius: 4px;
         text-align: center;
         cursor: pointer;
         padding: 10px;
-      }
-      
-      .restartGameBtn {
+    }
+
+    .restartGameBtn {
         background-color: rgb(239 28 183);
         margin-top: 3rem;
         margin-left: 2.0rem;
         font-size: 1.4rem;
         width: 9rem;
         height: 3rem;
-        border-radius: 4px; 
+        border-radius: 4px;
         text-align: center;
         display: flex;
         cursor: pointer;
         padding: 10px;
-      }
-      
-      #gameOver {
+    }
+
+    #gameOver {
         margin-top: 6rem;
         margin-left: 1.6rem;
         font-size: 1.8rem;
@@ -183,15 +185,17 @@
         height: 6rem;
         color: white;
         text-align: center;
-      }
-      
-      .answerContainer {
+    }
+
+    .answerContainer {
         margin-top: 0.2rem;
         margin-bottom: 2rem;
         padding: 0.2rem;
-      }
-      
-      .answer1, .answer2, .answer3 {
+    }
+
+    .answer1,
+    .answer2,
+    .answer3 {
         margin-top: 1.5rem;
         margin-left: 2.0rem;
         font-size: 1.4rem;
@@ -205,14 +209,14 @@
         text-align: center;
         display: inline-block;
         cursor: pointer;
-      }
-      
-      .hidden {
+    }
+
+    .hidden {
         display: none;
-      }
-      
-      .pointsContainer {
+    }
+
+    .pointsContainer {
         font-size: 2rem;
         color: yellow;
-      }
     }
+}
