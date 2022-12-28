@@ -29,11 +29,11 @@
     }
 
     .frontPage {
-        display: block;
+        display: flex;
     }
 
     .startGamePage {
-        display: block;
+        display: flex;
     }
 
     .categoryContainer {
@@ -62,8 +62,8 @@
     }
 
     .questionPage {
-        display: block;
-        margin-top: 4rem;
+        display: flex;
+ 
     }
 
     .questionContainer {
@@ -112,6 +112,7 @@
         font-size: 1.4rem;
         margin-top: 1rem;
         display: block;
+        width: 85%;
     }
 
     .timeContainer {
@@ -123,7 +124,7 @@
     .startGameBtn {
         background-color: rgb(239 28 183);
         margin-top: 2rem;
-        margin-left: 5rem;
+        margin-left: 3.8rem;
         margin-bottom: 6rem;
         font-size: 1.4rem;
         width: 7.5rem;
@@ -153,7 +154,7 @@
         background-color: rgb(239 28 183);
         margin-top: 2rem;
         margin-left: 5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
         font-size: 1.4rem;
         width: 10rem;
         height: 4rem;
@@ -189,8 +190,7 @@
 
     .answerContainer {
         margin-top: 3.4rem;
-        margin-bottom: 2rem;
-      
+        margin-bottom: 2rem;      
     }
 
     .answer1,

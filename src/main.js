@@ -140,14 +140,24 @@ const questionsChoice2 = [
     answerOptions: ['Hasse Andersson', 'Lasse Alfredsson', 'Hasse Albertsson'],
     correctAnswer: 'Hasse Andersson',
   },
+  {
+    questionText: 'Vad heter låten som Tusse sjöng i Melodifestivalen?',
+    answerOptions: ['Friends', 'Voices', 'Blue'],
+    correctAnswer: 'Voices',
+  },
 ];
 
 const questionsChoice3 = [
   // Frågor för kategori 3 (familj)
   {
-    questionText: 'Vem är hungrigast av spökena?',
-    answerOptions: ['Freezy', 'William', 'Gulp'],
-    correctAnswer: 'Gulp',
+    questionText: 'Vem är bäst på tennis?',
+    answerOptions: ['Liam', 'Elin', 'Camilla'],
+    correctAnswer: 'Liam',
+  },
+  {
+    questionText: 'Vem har värst morgonhumör?',
+    answerOptions: ['Emelie', 'Elin', 'Camilla'],
+    correctAnswer: 'Elin',
   },
 ];
 
@@ -231,7 +241,7 @@ function restartGame() {
   document.querySelector('#showTime').style.display = 'block';
   document.querySelector('#timer').style.display = 'block';
   // shuffleArray(questionsChoice1);     Denna rad behövs inte om jag startar från kategorisidan
-  chooseCategory(); // Här vill jag komma till kategorisidan i stället för frågesidan
+  nextQuestion(); // Här vill jag komma till kategorisidan i stället för frågesidan
 }
 
 function gameOver() {
