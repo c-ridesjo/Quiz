@@ -19,7 +19,7 @@ const category = [
   },
 ];
 
-const categoryDiv = document.querySelector('categoryContainer'); // Skapar hållare för kategorier
+//const categoryDiv = document.querySelector('categoryContainer'); // Skapar hållare för kategorier
 const choice1Btn = document.querySelector('#choice1'); // Skapar knappar för kategorier
 const choice2Btn = document.querySelector('#choice2');
 const choice3Btn = document.querySelector('#choice3');
