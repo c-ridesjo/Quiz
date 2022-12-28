@@ -5,6 +5,7 @@ function chooseCategory() {
   //document.querySelector('frontPage').style.display = 'block';   ??
   //document.querySelector('categoryText').style.display = 'block';
   //document.querySelector('choice1', 'choice2', 'choice3').style.display = 'block';
+
 } /* Anropa denna funktion i stället för nextQuestion i funktionen RestartGame??  */
 
 const category = [
@@ -241,7 +242,7 @@ function restartGame() {
   document.querySelector('#showTime').style.display = 'block';
   document.querySelector('#timer').style.display = 'block';
   // shuffleArray(questionsChoice1);     Denna rad behövs inte om jag startar från kategorisidan
-  nextQuestion(); // Här vill jag komma till kategorisidan i stället för frågesidan
+  nextQuestion(); // Här vill jag komma till kategorisidan i stället för frågesidan genom att anropa ny funktion på rad 4.
 }
 
 function gameOver() {
