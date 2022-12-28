@@ -29,11 +29,11 @@
     }
 
     .frontPage {
-        display: block;
+        display: flex;
     }
 
     .startGamePage {
-        display: block;
+        display: flex;
     }
 
     .categoryContainer {
@@ -42,7 +42,7 @@
     }
 
     .categoryText {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         margin-top: 2.0rem;
         margin-bottom: 0.4rem;
         display: block;
@@ -50,20 +50,20 @@
     }
 
     .questionText {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         margin-top: 2.0rem;
         margin-left: 1.4rem;
         margin-bottom: 0.4rem;
         display: block;
         text-align: center;
-        width: 80%;
+        width: 90%;
         height: 4rem;
         padding: 1rem;
     }
 
     .questionPage {
-        display: block;
-        margin-top: 4rem;
+        display: flex;
+ 
     }
 
     .questionContainer {
@@ -75,9 +75,9 @@
     .choice2,
     .choice3 {
         margin-top: 1.5rem;
-        font-size: 1.4rem;
-        width: 7rem;
-        height: 8rem;
+        font-size: 1.6rem;
+        width: 6.3rem;
+        height: 6rem;
         background-color: rgb(22 2 50);
         border-color: white;
         color: white;
@@ -101,7 +101,7 @@
     }
 
     .player {
-        margin-top: 5rem;
+        margin-top: 1rem;
         margin-bottom: 5rem;
         margin-left: 3rem;
         justify-content: center;
@@ -112,6 +112,7 @@
         font-size: 1.4rem;
         margin-top: 1rem;
         display: block;
+        width: 85%;
     }
 
     .timeContainer {
@@ -122,12 +123,12 @@
 
     .startGameBtn {
         background-color: rgb(239 28 183);
-        margin-top: 4rem;
-        margin-left: 5rem;
+        margin-top: 2rem;
+        margin-left: 3.8rem;
         margin-bottom: 6rem;
         font-size: 1.4rem;
-        width: 7rem;
-        height: 3rem;
+        width: 7.5rem;
+        height: 3.5rem;
         border-radius: 4px;
         text-align: center;
         cursor: pointer;
@@ -137,7 +138,7 @@
     .nextQuestBtn {
         background-color: rgb(239 28 183);
         margin-top: 1rem;
-        margin-left: 6.5rem;
+        margin-left: 5rem;
         margin-bottom: 4rem;
         font-size: 1.4rem;
         width: 10rem;
@@ -152,11 +153,11 @@
         display: none;
         background-color: rgb(239 28 183);
         margin-top: 2rem;
-        margin-left: 6.5rem;
-        margin-bottom: 6rem;
+        margin-left: 5rem;
+        margin-bottom: 3rem;
         font-size: 1.4rem;
         width: 10rem;
-        height: 3rem;
+        height: 4rem;
         border-radius: 4px;
         text-align: center;
         cursor: pointer;
@@ -168,11 +169,11 @@
         margin-top: 3rem;
         margin-left: 2.0rem;
         font-size: 1.4rem;
-        width: 9rem;
-        height: 3rem;
+        width: 10rem;
+        height: 4rem;
         border-radius: 4px;
         text-align: center;
-        display: flex;
+        display: block;
         cursor: pointer;
         padding: 10px;
     }
@@ -188,24 +189,23 @@
     }
 
     .answerContainer {
-        margin-top: 0.2rem;
-        margin-bottom: 2rem;
-        padding: 0.2rem;
+        margin-top: 3.4rem;
+        margin-bottom: 2rem;      
     }
 
     .answer1,
     .answer2,
     .answer3 {
-        margin-top: 1.5rem;
-        margin-left: 2.0rem;
+        margin-top: 1rem;
+        margin-left: 1rem;
+        margin-bottom: 0.1rem;
         font-size: 1.4rem;
-        width: 20rem;
+        width: 18rem;
         height: 3rem;
         background-color: rgb(22 2 50);
         border-color: white;
         color: white;
-        border-radius: 4px;
-        padding: 5px;
+        border-radius: 4px;     
         text-align: center;
         display: inline-block;
         cursor: pointer;
