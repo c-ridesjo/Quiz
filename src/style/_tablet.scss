@@ -21,7 +21,7 @@
 
     h1 {
         font-family: 'Fredoka One', sans-serif;
-        font-size: 2.4rem;
+        font-size: 2.8rem;
         display: block;
         color: rgb(239 28 183);
         padding: 35px;
@@ -42,7 +42,7 @@
     }
 
     .categoryText {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
         margin-top: 2.0rem;
         margin-bottom: 0.4rem;
         display: block;
@@ -75,14 +75,14 @@
     .choice2,
     .choice3 {
         margin-top: 1.5rem;
-        font-size: 1.6rem;
-        width: 6.3rem;
-        height: 6rem;
+        font-size: 2rem;
+        width: 7rem;
+        height: 6.4rem;
         background-color: rgb(22 2 50);
         border-color: white;
         color: white;
         border-radius: 4px;
-        padding: 5px;
+        padding: 10px;
         text-align: center;
         display: inline-block;
         cursor: pointer;
@@ -117,14 +117,14 @@
 
     .timeContainer {
         font-size: 1rem;
-        margin-left: 2rem;
+        margin-left: 4.2rem;
         display: block;
     }
 
     .startGameBtn {
         background-color: rgb(239 28 183);
         margin-top: 2rem;
-        margin-left: 3.8rem;
+        margin-left: 7rem;
         margin-bottom: 6rem;
         font-size: 1.4rem;
         width: 7.5rem;
@@ -137,8 +137,8 @@
 
     .nextQuestBtn {
         background-color: rgb(239 28 183);
-        margin-top: 1rem;
-        margin-left: 5rem;
+        margin-top: 2rem;
+        margin-left: 10rem;
         margin-bottom: 4rem;
         font-size: 1.4rem;
         width: 10rem;
@@ -152,16 +152,16 @@
     .resultBtn {
         display: none;
         background-color: rgb(239 28 183);
-        margin-top: 2rem;
-        margin-left: 5rem;
-        margin-bottom: 3rem;
+        margin-top: 1rem;
+        margin-left: 10rem;
+        margin-bottom: 4rem;
         font-size: 1.4rem;
         width: 10rem;
-        height: 4rem;
+        height: 3rem;
         border-radius: 4px;
         text-align: center;
         cursor: pointer;
-        padding: 10px;
+        padding: 5px;
     }
 
     .restartGameBtn {
@@ -180,7 +180,6 @@
 
     #gameOver {
         margin-top: 6rem;
-        margin-left: 1.6rem;
         font-size: 1.8rem;
         width: 15rem;
         height: 6rem;
@@ -189,19 +188,19 @@
     }
 
     .answerContainer {
-        margin-top: 3.4rem;
-        margin-bottom: 2rem;      
+        margin-top: 2.2rem;
+        margin-bottom: 0.2rem;      
     }
 
     .answer1,
     .answer2,
     .answer3 {
-        margin-top: 1rem;
-        margin-left: 1rem;
+        margin-top: 0.4rem;
+        margin-left: 4rem;
         margin-bottom: 0.1rem;
-        font-size: 1.4rem;
-        width: 18rem;
-        height: 3rem;
+        font-size: 1.6rem;
+        width: 22rem;
+        height: 5rem;
         background-color: rgb(22 2 50);
         border-color: white;
         color: white;
