@@ -95,7 +95,7 @@
         color: rgb(28 239 35);
         margin-top: 0.2rem;
         margin-bottom: 3rem;
-        margin-right: 2.2rem;
+        margin-right: 8rem;
         padding: 2rem;
         text-align: center;
     }
@@ -103,7 +103,7 @@
     .player {
         margin-top: 1rem;
         margin-bottom: 5rem;
-        margin-left: 3rem;
+        margin-left: 7rem;
         justify-content: center;
         font-size: 1.6rem;
     }
@@ -111,7 +111,7 @@
     .playerInput {
         font-size: 1.4rem;
         margin-top: 1rem;
-        margin-left: 2.4rem;
+        margin-right: 2.2rem;
         display: block;
         width: 85%;
     }
@@ -125,7 +125,7 @@
     .startGameBtn {
         background-color: rgb(239 28 183);
         margin-top: 2rem;
-        margin-left: 7rem;
+        margin-left: 10rem;
         margin-bottom: 6rem;
         font-size: 1.4rem;
         width: 7.5rem;
@@ -134,6 +134,7 @@
         text-align: center;
         cursor: pointer;
         padding: 10px;
+        display: flexbox;
     }
 
     .nextQuestBtn {
