@@ -63,7 +63,7 @@
 
     .questionPage {
         display: flex;
- 
+        text-align: center; 
     }
 
     .questionContainer {
@@ -104,7 +104,7 @@
         margin-top: 1rem;
         margin-bottom: 5rem;
         margin-left: 3rem;
-        justify-content: center;
+        display: center;
         font-size: 1.6rem;
     }
 
@@ -117,9 +117,20 @@
 
     .timeContainer {
         font-size: 1rem;
-        margin-left: 2rem;
-        display: block;
     }
+
+    .showTime {
+        text-align: left;
+        display: block; 
+        margin-left: 2.5rem;
+    }
+
+    .timer {
+        text-align: left;
+        display: block; 
+        margin-left: 2.5rem;
+    }
+
 
     .startGameBtn {
         background-color: rgb(239 28 183);
@@ -138,7 +149,7 @@
     .nextQuestBtn {
         background-color: rgb(239 28 183);
         margin-top: 1rem;
-        margin-left: 5rem;
+        margin-left: 1rem;
         margin-bottom: 4rem;
         font-size: 1.4rem;
         width: 10rem;
