@@ -146,6 +146,46 @@ const questionsChoice2 = [
     answerOptions: ['Friends', 'Voices', 'Blue'],
     correctAnswer: 'Voices',
   },
+  {
+    questionText: 'Vilket band sjunger om Maja Piraya?',
+    answerOptions: ['Mora Träsk', 'Electric Banana Band', 'Sean Banan'],
+    correctAnswer: 'Electric Banana Band',
+  },
+  {
+    questionText: 'Galen groda som sjunger',
+    answerOptions: ['Grodan Boll', 'Crazy Frog', 'Kermit'],
+    correctAnswer: 'Crazy Frog',
+  },
+  {
+    questionText: 'Vad heter bandet som Emelie har på LP?',
+    answerOptions: ['Green Day', 'Weezer', 'The Smashing Pumpkins'],
+    correctAnswer: 'Weezer',
+  },
+  /* {
+    questionText: '',
+    answerOptions: ['', '', ''],
+    correctAnswer: '',
+  },
+  {
+    questionText: '',
+    answerOptions: ['', '', ''],
+    correctAnswer: '',
+  },
+  {
+    questionText: '',
+    answerOptions: ['', '', ''],
+    correctAnswer: '',
+  },
+  {
+    questionText: '',
+    answerOptions: ['', '', ''],
+    correctAnswer: '',
+  },
+  {
+    questionText: '',
+    answerOptions: ['', '', ''],
+    correctAnswer: '',
+  }, */
 ];
 
 const questionsChoice3 = [
@@ -156,9 +196,49 @@ const questionsChoice3 = [
     correctAnswer: 'Liam',
   },
   {
-    questionText: 'Vem har värst morgonhumör?',
+    questionText: 'Vem har sämst morgonhumör?',
     answerOptions: ['Emelie', 'Elin', 'Camilla'],
     correctAnswer: 'Elin',
+  },
+  {
+    questionText: 'Hur många gummiankor har Elin?',
+    answerOptions: ['15', '12', '7'],
+    correctAnswer: '15',
+  },
+  {
+    questionText: 'Vad innebär det att ”göra en Elin”?',
+    answerOptions: ['Komma hem med trasiga skor', 'Trampa i hundbajs', 'Tappa nudlarna i vasken'],
+    correctAnswer: 'Tappa nudlarna i vasken',
+  },
+  {
+    questionText: 'Vem har varit med i en talangjakt (sång)?',
+    answerOptions: ['Camilla', 'Emelie', 'Elin'],
+    correctAnswer: 'Camilla',
+  },
+  {
+    questionText: 'Vilken maträtt skulle Liam välja?',
+    answerOptions: ['Nudlar', 'Makaroner och köttbullar', 'Sushi'],
+    correctAnswer: 'Sushi',
+  },
+  {
+    questionText: 'Vilka är de största godisråttorna?',
+    answerOptions: ['Emelie och Elin', 'Camilla och William', 'Liam och Emelie'],
+    correctAnswer: 'Camilla och William',
+  },
+  {
+    questionText: 'Vem sover längst?',
+    answerOptions: ['Mio', 'William', 'Elin'],
+    correctAnswer: 'Elin',
+  },
+  {
+    questionText: 'Vad heter Liams favoritpokemón?',
+    answerOptions: ['Pikachu', 'Mewtwo', 'Meowth'],
+    correctAnswer: 'Mewtwo',
+  },
+  {
+    questionText: 'Vem började spela gitarr som sexåring?',
+    answerOptions: ['Emelie', 'William', 'Camilla'],
+    correctAnswer: 'Emelie',
   },
 ];
 
