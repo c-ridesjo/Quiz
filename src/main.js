@@ -7,9 +7,9 @@ function chooseCategory() {
   document.querySelector('#questionText').style.display = 'none';
   document.querySelector('#answerContainer').style.display = 'none';
   document.querySelector('#showTime').style.display = 'none';
-  document.querySelector('#timer').style.display = 'none';  
+  document.querySelector('#timer').style.display = 'none';
   document.querySelector('#nextQuestBtn').style.display = 'none';
-} 
+}
 
 const category = [
   {
@@ -59,7 +59,6 @@ function checkChoice(e) {
   }
   document.querySelector('#categoryContainer').style.display = 'none';
   gsap.to('#showChoice', { opacity: 0.5, delay: 1, repeat: -1, yoyo: true });
-
 }
 
 let player = 0;
@@ -243,7 +242,7 @@ function restartGame() {
   document.querySelector('#showTime').style.display = 'block';
   document.querySelector('#timer').style.display = 'block';
   // shuffleArray(questionsChoice1);     Denna rad behövs inte om jag startar från kategorisidan
-  chooseCategory(); 
+  chooseCategory();
 }
 
 function gameOver() {
