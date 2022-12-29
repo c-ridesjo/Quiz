@@ -59,6 +59,7 @@ function checkChoice(e) {
   }
   document.querySelector('#categoryContainer').style.display = 'none';
   gsap.to('#showChoice', { opacity: 0.5, delay: 1, repeat: -1, yoyo: true });
+
 }
 
 let player = 0;
