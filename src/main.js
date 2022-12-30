@@ -1,17 +1,17 @@
-import './style/style.scss';
-import { gsap } from 'gsap';
+import './style/style.scss';      // Importerar style
+import { gsap } from 'gsap';      // Importerar gsap som behövs för animering
 
-function chooseCategory() {
-  document.querySelector('h1').style.display = 'block';
+function chooseCategory() {     // Funktion för att visa startsidan
+  document.querySelector('h1').style.display = 'block';     // Visar/tar fram det som ska synas på sidan
   document.querySelector('#categoryContainer').style.display = 'block';
-  document.querySelector('#questionText').style.display = 'none';
+  document.querySelector('#questionText').style.display = 'none';     // Döljer det som inte ska synas
   document.querySelector('#answerContainer').style.display = 'none';
   document.querySelector('#showTime').style.display = 'none';
   document.querySelector('#timer').style.display = 'none';
   document.querySelector('#nextQuestBtn').style.display = 'none';
 }
 
-const category = [
+const category = [      // Skapar array för de olika kategorierna
   {
     categoryText: 'Välj kategori:',
     categoryOptions: ['choice1', 'choice2', 'choice3'],
@@ -24,7 +24,7 @@ const choice1Btn = document.querySelector('#choice1'); // Skapar knappar för ka
 const choice2Btn = document.querySelector('#choice2');
 const choice3Btn = document.querySelector('#choice3');
 const questionText = document.querySelector('#questionText');
-let haveAnswered = false;
+let haveAnswered = false;     // Skapar variabel för att inte kunna svara flera gånger på samma fråga
 
 choice1Btn.addEventListener('click', checkChoice); // Lägger till click-event till knapparna
 choice2Btn.addEventListener('click', checkChoice);
@@ -33,8 +33,7 @@ choice3Btn.addEventListener('click', checkChoice);
 let currentTarget = 0;
 let currentQuestion = 0;
 
-function checkChoice(e) {
-  // Skapar funktion för val av kategori
+function checkChoice(e) {      // Skapar funktion för val av kategori 
   const userCategory = e.currentTarget.innerHTML;
   document.querySelector('.startGamePage').style.display = 'block';
   document.querySelector('.questionPage').style.display = 'block';
@@ -42,9 +41,9 @@ function checkChoice(e) {
   const userChoice = category[currentTarget].userChoice;
   if (userCategory === 'Film') {
     document.querySelector('h1').style.display = 'none';
-    console.log('Film'); // Skriv ut vilken kategori som valts
-    document.querySelector('#showChoice').innerHTML = `Film`; // Visar vilken kategori som valts
-    gsap.to('#showChoice', { opacity: 0.5, delay: 1, repeat: -1, yoyo: true });
+    console.log('Film');      // Skriv ut i konsollen vilken kategori som valts
+    document.querySelector('#showChoice').innerHTML = `Film`;       // Visar på skärmen vilken kategori som valts
+    gsap.to('#showChoice', { opacity: 0.5, delay: 1, repeat: -1, yoyo: true });  // Animering av vald kategori
   }
   if (userCategory === 'Musik') {
     document.querySelector('h1').style.display = 'none';
@@ -68,7 +67,7 @@ document.querySelector('#startGameBtn').addEventListener('click', startGame);
 document.querySelector('.startGamePage').style.display = 'none';
 document.querySelector('.questionPage').style.display = 'none';
 
-function startGame() {
+function startGame() {      // Funktion för att visa sid 2
   console.log('startGame');
 
   player = document.querySelector('#playerInput').value; // Sparar spelarens namn
@@ -80,7 +79,7 @@ function startGame() {
   document.querySelector('#timer').style.display = 'block';
 }
 
-const questionsChoice1 = [
+const questionsChoice1 = [      // Skapar array för frågor och svarsalternativ
   // Frågor för kategori 1 (film)
   {
     questionText: 'Vem hissades upp i flaggstången i Lönneberga?',
@@ -242,7 +241,7 @@ const questionsChoice3 = [
   },
 ];
 
-function shuffleArray(arrayToShuffle) {
+function shuffleArray(arrayToShuffle) {     // Funktion för att slumpa frågorna
   for (let i = arrayToShuffle.length - 1; i > 0; i--) {
     let randomPosition = Math.floor(Math.random() * (i + 1));
     let temp = arrayToShuffle[i];
@@ -266,9 +265,9 @@ answer3Btn.addEventListener('click', checkAnswer);
 
 let points = 0;
 
-function checkAnswer(e) {
+function checkAnswer(e) {     // Funktion för att kontrollera svar och ge/dra av poäng
   if (haveAnswered === false) {
-    // Om frågan inte har besvarats, ska nedan kod köras.
+    // Om frågan inte har besvarats, ska koden nedanför köras.
     const userAnswer = e.currentTarget.innerHTML; // Vilket svarsalternativ spelaren väljer
 
     const correctAnswer = questionsChoice1[currentQuestion - 1].correctAnswer; // -1 för att få rätt svar innan nästa fråga
@@ -290,7 +289,7 @@ document.querySelector('#nextQuestBtn').addEventListener('click', startGame);
 document.querySelector('#showTime').style.display = 'none';
 document.querySelector('#timer').style.display = 'none';
 
-function nextQuestion() {
+function nextQuestion() {       // Funktion för nästa fråga
   haveAnswered = false;
   if (currentQuestion >= questionsChoice1.length) {
     // När frågorna är slut
@@ -298,7 +297,7 @@ function nextQuestion() {
     return;
   }
 
-  document.getElementById('answer1').style.color = 'white';
+  document.getElementById('answer1').style.color = 'white';     // Stylar om svaren till vit text (för att få bort tidigare röd/grönmarkering)
   document.getElementById('answer2').style.color = 'white';
   document.getElementById('answer3').style.color = 'white';
 
@@ -307,13 +306,13 @@ function nextQuestion() {
   answer2Btn.innerHTML = questionsChoice1[currentQuestion].answerOptions[1];
   answer3Btn.innerHTML = questionsChoice1[currentQuestion].answerOptions[2];
 
-  currentQuestion++; // currentQuestion + 1 (går vidare till nästa fråga)
+  currentQuestion++; // detsamma som currentQuestion + 1 (går vidare till nästa fråga)
 }
-document.querySelector('#resultBtn').addEventListener('click', gameOver);
 
+document.querySelector('#resultBtn').addEventListener('click', gameOver);
 document.querySelector('#restartGameBtn').addEventListener('click', restartGame);
 
-function restartGame() {
+function restartGame() {      // Funktion för att spela igen
   document.querySelector('#gameOver').style.display = 'none';
   document.querySelector('#questionsContainer').classList.remove('hidden');
   document.querySelector('#nextQuestBtn').style.display = 'block';
@@ -325,7 +324,7 @@ function restartGame() {
   chooseCategory();
 }
 
-function gameOver() {
+function gameOver() {     // Funktion för att visa sista sidan; gameover-sidan.
   document.querySelector('#gameOver').style.display = 'block';
   if (currentQuestion === questionsChoice1.length) {
     document.querySelector('#resultBtn').style.display = 'block';
@@ -337,7 +336,7 @@ function gameOver() {
 const resultBtn = document.querySelector('#resultBtn');
 resultBtn.addEventListener('click', showResult);
 
-function showResult() {
+function showResult() {     // Funktion för att visa resultat på sista sidan
   document.querySelector('#questionsContainer').classList.add('hidden');
   document.querySelector('#nextQuestBtn').style.display = 'none';
   document.querySelector('#pointsContainer').innerHTML = `Du fick ${points} poäng!`;
@@ -347,7 +346,7 @@ function showResult() {
 
   gsap.to('#pointsContainer', { opacity: 0.5, delay: 1, repeat: -1, yoyo: true });
 
-  if (points == 10) {
+  if (points == 10) {     // Olika meddelanden beroende på antal poäng
     console.log('Alla rätt!');
     document.querySelector('#pointsMess1').innerHTML = `Grattis!! Det där gick ju strålande!`;
     }
@@ -359,10 +358,7 @@ function showResult() {
     console.log('Bättre lycka nästa gång!');
     document.querySelector('#pointsMess3').innerHTML = `Bättre lycka nästa gång!`;
     }
-
-
-
-}
+  }
 
 
 
