@@ -2,8 +2,11 @@
 <html lang="sv">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="A quiz">
+  <meta property="og:title" content="FamiljeQuizzet">
+  <meta property="og:type" content="A quiz for the family">
   <link rel="icon" type="image/ico" href="/favicon.ico">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Kanit&display=swap">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,6 +57,9 @@
     <div id="gameOver" class="hidden">
       Spelet är slut!
       <p id="pointsContainer" class="pointsContainer"></p>
+        <p class="pointsMess1"></p>
+        <p class="pointsMess2"></p>
+        <p class="pointsMess3"></p>
       <button id="restartGameBtn" class="restartGameBtn">Spela igen</button>
     </div>
     <script type="module" src="src/main.js"></script>

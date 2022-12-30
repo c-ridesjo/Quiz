@@ -346,4 +346,24 @@ function showResult() {
   document.querySelector('#resultBtn').style.display = 'none';
 
   gsap.to('#pointsContainer', { opacity: 0.5, delay: 1, repeat: -1, yoyo: true });
+
+  if (points == 10) {
+    console.log('Alla rätt!');
+    document.querySelector('#pointsMess1').innerHTML = `Grattis!! Det där gick ju strålande!`;
+    }
+    else if (points <= 9 && points >= 5) {
+    console.log('Bra jobbat!');
+    document.querySelector('#pointsMess2').innerHTML = `Bra jobbat!`;
+    }
+    else {
+    console.log('Bättre lycka nästa gång!');
+    document.querySelector('#pointsMess3').innerHTML = `Bättre lycka nästa gång!`;
+    }
+
+
+
 }
+
+
+
+
