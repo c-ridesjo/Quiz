@@ -36,6 +36,7 @@
 
     .startGamePage {
         display: flex;
+        margin-top: 3rem;
     }
 
     .categoryContainer {
@@ -232,20 +233,9 @@
         color: yellow;
     }
 
-    .pointsMess1 {
+    .pointsMess {
         display: block;
         margin-top: 1rem;
         color: green;
-    }
-
-    .pointsMess2 {
-        display: block;
-        margin-top: 1rem;
-        color: orange;
-    }
-
-    .pointsMess2 {
-        display: block;
-        margin-top: 1rem;
-        color: red;
+        font-size: 2.2rem;
     }

@@ -164,8 +164,8 @@
     .resultBtn {
         display: none;
         background-color: rgb(239 28 183);
-        margin-top: 1.6rem;
-        margin-left: 22rem;
+        margin-top: 1.9rem;
+        margin-left: 26.5rem;
         margin-bottom: 4rem;
         font-size: 1.4rem;
         width: 10rem;
@@ -211,8 +211,8 @@
         margin-left: 1rem;
         margin-bottom: 0.1rem;
         font-size: 1.8rem;
-        width: 16rem;
-        height: 8rem;
+        width: 19rem;
+        height: 7rem;
         background-color: rgb(22 2 50);
         border-color: white;
         color: white;
@@ -229,5 +229,12 @@
     .pointsContainer {
         font-size: 2rem;
         color: yellow;
+    }
+
+    .pointsMess {
+        display: block;
+        margin-top: 1rem;
+        color: green;
+        font-size: 2.2rem;
     }
 }

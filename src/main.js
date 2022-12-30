@@ -59,6 +59,7 @@ function checkChoice(e) {      // Skapar funktion för val av kategori
     document.querySelector('#showChoice').innerHTML = `Familj`;
   }
   document.querySelector('#categoryContainer').classList.add('hidden'); 
+  document.querySelector('#questionsContainer').classList.add('hidden'); 
   gsap.to('#showChoice', { opacity: 0.5, delay: 1, repeat: -1, yoyo: true });
 }
 
@@ -96,9 +97,9 @@ const questionsChoice1 = [      // Skapar array för frågor och svarsalternativ
     correctAnswer: 'Birk',
   },
   {
-    questionText: 'Vad heter årets julkalender?',
-    answerOptions: ['Prinskorven som försvann', 'Kronprinsen som försvann', 'Kronan som försvann'],
-    correctAnswer: 'Kronprinsen som försvann',
+    questionText: 'Vad försvann i årets julkalender?',
+    answerOptions: ['En prinskorv', 'En kronprins', 'En krona'],
+    correctAnswer: 'En kronprins',
   },
   {
     questionText: 'Vad bor Svampbob Fyrkant i?',
@@ -161,7 +162,7 @@ const questionsChoice2 = [
   },
   {
     questionText: 'Vad heter bandet som Emelie har på LP?',
-    answerOptions: ['Green Day', 'Weezer', 'The Smashing Pumpkins'],
+    answerOptions: ['Green Day', 'Weezer', 'Linkin Park'],
     correctAnswer: 'Weezer',
   },
   /* {
@@ -210,7 +211,7 @@ const questionsChoice3 = [
   },
   {
     questionText: 'Vad innebär det att ”göra en Elin”?',
-    answerOptions: ['Komma hem med trasiga skor', 'Trampa i hundbajs', 'Tappa nudlarna i vasken'],
+    answerOptions: ['Gå med trasiga skor', 'Trampa i hundbajs', 'Tappa nudlar i vasken'],
     correctAnswer: 'Tappa nudlarna i vasken',
   },
   {
@@ -220,7 +221,7 @@ const questionsChoice3 = [
   },
   {
     questionText: 'Vilken maträtt skulle Liam välja?',
-    answerOptions: ['Nudlar', 'Makaroner och köttbullar', 'Sushi'],
+    answerOptions: ['Nudlar', 'Köttbullar', 'Sushi'],
     correctAnswer: 'Sushi',
   },
   {
@@ -297,7 +298,6 @@ function nextQuestion() {       // Funktion för nästa fråga
   haveAnswered = false;
   if (currentQuestion >= chosenCat.length) {
     // När frågorna är slut
-    console.log("hej");
     document.querySelector('#nextQuestBtn').classList.add('hidden'); 
     document.querySelector('#resultBtn').classList.add('visible'); 
    // gameOver();
@@ -357,15 +357,15 @@ function showResult() {     // Funktion för att visa resultat på sista sidan
 
   if (points == 10) {     // Olika meddelanden beroende på antal poäng
     console.log('Alla rätt!');
-    document.querySelector('.pointsMess1').innerHTML = `Grattis!! Det där gick ju strålande! 🎉`;
+    document.querySelector('.pointsMess').innerHTML = `Det där gick ju strålande!! 🎉`;
     }
-    else if (points <= 9 && points >= 5) {
+    if (points <= 9 && points >= 5) {
     console.log('Bra jobbat!');
-    document.querySelector('.pointsMess2').innerHTML = `Nice! 😎`;
+    document.querySelector('.pointsMess').innerHTML = `Nice! 😎`;
     }
-    else {
+    else if (points < 4) {
     console.log('Bättre lycka nästa gång!');
-    document.querySelector('.pointsMess3').innerHTML = `Bättre lycka nästa gång! 😐`;
+    document.querySelector('.pointsMess').innerHTML = `Bättre lycka nästa gång! 😐`;
     }
   }
 
