@@ -72,12 +72,10 @@ document.querySelector('#nextQuestBtn').classList.add('hidden');
 document.querySelector('#questionsContainer').classList.add('hidden'); 
 
 function startGame() {      // Funktion för att visa sid 2
-  console.log('startGame');
-
+  console.log('startGame');  
   player = document.querySelector('#playerInput').value; // Sparar spelarens namn
-
   document.querySelector('#player').classList.add('hidden');  // Namnet döljs
-
+ 
   nextQuestion();
   document.querySelector('#showTime').classList.remove('hidden');
   document.querySelector('#timer').classList.remove('hidden');
