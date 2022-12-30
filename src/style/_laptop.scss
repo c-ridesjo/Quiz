@@ -1,4 +1,4 @@
-@media screen and (min-width:769px)  {
+@media screen and (min-width:769px) {
     /* CSS för laptops med maxstorlek 1024px */
 
     body {
@@ -62,7 +62,7 @@
     }
 
     .questionPage {
-        display: flex;
+        // display: flex;
         text-align: center;
     }
 
@@ -94,7 +94,7 @@
         display: block;
         color: rgb(28 239 35);
         margin-top: 0.2rem;
-        margin-bottom: 3rem;
+        margin-bottom: 1.6rem;
         margin-right: 18rem;
         padding: 2rem;
         text-align: center;
@@ -102,7 +102,7 @@
 
     .player {
         margin-top: 1rem;
-        margin-bottom: 5rem;
+        margin-bottom: 2rem;
         margin-left: 16rem;
         display: block;
         font-size: 1.6rem;
@@ -118,6 +118,7 @@
 
     .timeContainer {
         font-size: 1.2rem;
+        margin-top: 4rem;
     }
 
     .showTime {
@@ -150,8 +151,8 @@
     .nextQuestBtn {
         background-color: rgb(239 28 183);
         margin-top: 2rem;
-        margin-left: 1rem;
-        margin-bottom: 4rem;
+        margin-left: 1.5rem;
+        margin-bottom: 3rem;
         font-size: 1.4rem;
         width: 10rem;
         height: 3rem;
@@ -208,9 +209,8 @@
     .answer2,
     .answer3 {
         margin-top: 0.4rem;
-        margin-left: 1rem;
         margin-bottom: 0.1rem;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         width: 14rem;
         height: 6rem;
         background-color: rgb(22 2 50);

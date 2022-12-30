@@ -1,4 +1,4 @@
-@media screen and (min-width:481px)  {
+@media screen and (min-width:481px) {
     /* CSS för tablets med maxstorlek 768px */
 
     body {
@@ -62,7 +62,6 @@
     }
 
     .questionPage {
-        display: flex;
         text-align: center;
     }
 
@@ -75,6 +74,7 @@
     .choice2,
     .choice3 {
         margin-top: 1.5rem;
+        margin-left: 1rem;
         font-size: 2rem;
         width: 9rem;
         height: 8.4rem;
@@ -94,7 +94,7 @@
         display: block;
         color: rgb(28 239 35);
         margin-top: 0.2rem;
-        margin-bottom: 3rem;
+        margin-bottom: 1.6rem;
         margin-right: 8rem;
         padding: 2rem;
         text-align: center;
@@ -102,7 +102,7 @@
 
     .player {
         margin-top: 1rem;
-        margin-bottom: 5rem;
+        margin-bottom: 2rem;
         margin-left: 7rem;
         display: block;
         font-size: 1.6rem;
@@ -135,7 +135,7 @@
     .startGameBtn {
         background-color: rgb(239 28 183);
         margin-top: 2rem;
-        margin-left: 7rem;
+        margin-left: 5rem;
         margin-bottom: 6rem;
         font-size: 1.4rem;
         width: 7.5rem;
@@ -150,8 +150,8 @@
     .nextQuestBtn {
         background-color: rgb(239 28 183);
         margin-top: 2rem;
-        margin-left: 1rem;
-        margin-bottom: 4rem;
+        margin-left: 2rem;
+        margin-bottom: 3rem;
         font-size: 1.4rem;
         width: 10rem;
         height: 3rem;
@@ -164,9 +164,9 @@
     .resultBtn {
         display: none;
         background-color: rgb(239 28 183);
-        margin-top: 2.1rem;
-        margin-left: 12.5rem;
-        margin-bottom: 4rem;
+        margin-top: 2rem;
+        margin-left: 15.5rem;
+        margin-bottom: rem;
         font-size: 1.4rem;
         width: 10rem;
         height: 3rem;

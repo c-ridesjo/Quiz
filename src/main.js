@@ -2,13 +2,12 @@ import './style/style.scss';      // Importerar style
 import { gsap } from 'gsap';      // Importerar gsap som behövs för animering
 
 function chooseCategory() {     // Funktion för att visa startsidan
-  document.querySelector('h1').style.display = 'block';     // Visar/tar fram det som ska synas på sidan
-  document.querySelector('#categoryContainer').style.display = 'block';
-  document.querySelector('#questionsContainer').style.display = 'none';     // Döljer det som inte ska synas
-  //document.querySelector('#answerContainer').style.display = 'none';
-  document.querySelector('#showTime').style.display = 'none';
-  document.querySelector('#timer').style.display = 'none';
-  //document.querySelector('#nextQuestBtn').style.display = 'none';
+  document.querySelector('h1').classList.remove('hidden');     // Visar/tar fram det som ska synas på sidan
+  document.querySelector('#categoryContainer').classList.remove('hidden');
+  document.querySelector('#questionsContainer').classList.add('hidden');     // Döljer det som inte ska synas
+  document.querySelector('#showTime').classList.add('hidden'); 
+  document.querySelector('#timer').classList.add('hidden'); 
+  document.querySelector('#resultBtn').classList.remove('visible'); 
 }
 
 const category = [      // Skapar array för de olika kategorierna
@@ -19,7 +18,6 @@ const category = [      // Skapar array för de olika kategorierna
   },
 ];
 
-const categoryDiv = document.querySelector('categoryContainer'); // Skapar hållare för kategorier
 const choice1Btn = document.querySelector('#choice1'); // Skapar knappar för kategorier
 const choice2Btn = document.querySelector('#choice2');
 const choice3Btn = document.querySelector('#choice3');
@@ -32,60 +30,59 @@ choice3Btn.addEventListener('click', checkChoice);
 
 let currentTarget = 0;
 let currentQuestion = 0;
+let chosenCat = [];
 
 function checkChoice(e) {      // Skapar funktion för val av kategori 
   const userCategory = e.currentTarget.innerHTML;
-  document.querySelector('.startGamePage').style.display = 'block';
-  document.querySelector('.questionPage').style.display = 'block';
-  document.querySelector('#player').style.display = 'block';
+  document.querySelector('.startGamePage').classList.remove('hidden');
+  document.querySelector('.questionPage').classList.remove('hidden');
+  document.querySelector('#player').classList.remove('hidden');
 
-
-  const userChoice = category[currentTarget].userChoice;
   if (userCategory === 'Film') {
-    document.querySelector('h1').style.display = 'none';
+    chosenCat = questionsChoice1;
+    document.querySelector('h1').classList.add('hidden'); 
     console.log('Film');      // Skriv ut i konsollen vilken kategori som valts
     document.querySelector('#showChoice').innerHTML = `Film`;       // Visar på skärmen vilken kategori som valts
     gsap.to('#showChoice', { opacity: 0.5, delay: 1, repeat: -1, yoyo: true });  // Animering av vald kategori
   }
   if (userCategory === 'Musik') {
-    document.querySelector('h1').style.display = 'none';
+    chosenCat = questionsChoice2;
+    document.querySelector('h1').classList.add('hidden'); 
     console.log('Musik');
     document.querySelector('#showChoice').innerHTML = `Musik`;
     gsap.to('#showChoice', { opacity: 0.5, delay: 1, repeat: -1, yoyo: true });
   }
   if (userCategory === 'Familj') {
-    document.querySelector('h1').style.display = 'none';
+    chosenCat = questionsChoice3;
+    document.querySelector('h1').classList.add('hidden'); 
     console.log('Familj');
     document.querySelector('#showChoice').innerHTML = `Familj`;
   }
-  document.querySelector('#categoryContainer').style.display = 'none';
+  document.querySelector('#categoryContainer').classList.add('hidden'); 
   gsap.to('#showChoice', { opacity: 0.5, delay: 1, repeat: -1, yoyo: true });
 }
-
-
-let chooseCatText
-
-
-
 
 let player = 0;
 
 document.querySelector('#startGameBtn').addEventListener('click', startGame);
 
-document.querySelector('.startGamePage').style.display = 'none';
-document.querySelector('.questionPage').style.display = 'none';
+document.querySelector('.startGamePage').classList.add('hidden'); 
+document.querySelector('.questionPage').classList.add('hidden'); 
+document.querySelector('#nextQuestBtn').classList.add('hidden'); 
+document.querySelector('#questionsContainer').classList.add('hidden'); 
 
 function startGame() {      // Funktion för att visa sid 2
   console.log('startGame');
 
   player = document.querySelector('#playerInput').value; // Sparar spelarens namn
 
-  document.querySelector('#player').style.display = 'none'; // Namnet döljs
+  document.querySelector('#player').classList.add('hidden');  // Namnet döljs
 
   nextQuestion();
-  document.querySelector('#showTime').style.display = 'block';
-  document.querySelector('#timer').style.display = 'block';
-  document.querySelector('#questionsContainer').style.display = 'block';
+  document.querySelector('#showTime').classList.remove('hidden');
+  document.querySelector('#timer').classList.remove('hidden');
+  document.querySelector('#questionsContainer').classList.remove('hidden');
+  document.querySelector('#nextQuestBtn').classList.remove('hidden');
 }
 
 const questionsChoice1 = [      // Skapar array för frågor och svarsalternativ
@@ -261,7 +258,7 @@ function shuffleArray(arrayToShuffle) {     // Funktion för att slumpa frågorn
   return arrayToShuffle;
 }
 
-console.log(shuffleArray(questionsChoice1));
+console.log(shuffleArray(chosenCat));
 
 const questionDiv = document.querySelector('#questionText');
 const answer1Btn = document.querySelector('#answer1');
@@ -279,7 +276,7 @@ function checkAnswer(e) {     // Funktion för att kontrollera svar och ge/dra a
     // Om frågan inte har besvarats, ska koden nedanför köras.
     const userAnswer = e.currentTarget.innerHTML; // Vilket svarsalternativ spelaren väljer
 
-    const correctAnswer = questionsChoice1[currentQuestion - 1].correctAnswer; // -1 för att få rätt svar innan nästa fråga
+    const correctAnswer = chosenCat[currentQuestion - 1].correctAnswer; // -1 för att få rätt svar innan nästa fråga
     if (userAnswer === correctAnswer) {
       // Jämför spelarens svar med det rätta svaret
       points++, // Ger 1 poäng vid rätt svar
@@ -294,15 +291,18 @@ function checkAnswer(e) {     // Funktion för att kontrollera svar och ge/dra a
   }
 }
 
-document.querySelector('#nextQuestBtn').addEventListener('click', startGame);
-document.querySelector('#showTime').style.display = 'none';
-document.querySelector('#timer').style.display = 'none';
+document.querySelector('#nextQuestBtn').addEventListener('click', nextQuestion);
+document.querySelector('#showTime').classList.add('hidden'); 
+document.querySelector('#timer').classList.add('hidden'); 
 
 function nextQuestion() {       // Funktion för nästa fråga
   haveAnswered = false;
-  if (currentQuestion >= questionsChoice1.length) {
+  if (currentQuestion >= chosenCat.length) {
     // När frågorna är slut
-    gameOver();
+    console.log("hej");
+    document.querySelector('#nextQuestBtn').classList.add('hidden'); 
+    document.querySelector('#resultBtn').classList.add('visible'); 
+   // gameOver();
     return;
   }
 
@@ -310,49 +310,50 @@ function nextQuestion() {       // Funktion för nästa fråga
   document.getElementById('answer2').style.color = 'white';
   document.getElementById('answer3').style.color = 'white';
 
-  questionText.innerHTML = questionsChoice1[currentQuestion].questionText;
-  answer1Btn.innerHTML = questionsChoice1[currentQuestion].answerOptions[0];
-  answer2Btn.innerHTML = questionsChoice1[currentQuestion].answerOptions[1];
-  answer3Btn.innerHTML = questionsChoice1[currentQuestion].answerOptions[2];
+  questionText.innerHTML = chosenCat[currentQuestion].questionText;
+  answer1Btn.innerHTML = chosenCat[currentQuestion].answerOptions[0];
+  answer2Btn.innerHTML = chosenCat[currentQuestion].answerOptions[1];
+  answer3Btn.innerHTML = chosenCat[currentQuestion].answerOptions[2];
 
   currentQuestion++; // detsamma som currentQuestion + 1 (går vidare till nästa fråga)
 }
-
 document.querySelector('#resultBtn').addEventListener('click', gameOver);
 document.querySelector('#restartGameBtn').addEventListener('click', restartGame);
 
 function restartGame() {      // Funktion för att spela igen
-  document.querySelector('#gameOver').style.display = 'none';
+  document.querySelector('#gameOver').classList.add('hidden'); 
   document.querySelector('#questionsContainer').classList.remove('hidden');
-  document.querySelector('#nextQuestBtn').style.display = 'block';
+  document.querySelector('#nextQuestBtn').classList.add('hidden'); 
   currentQuestion = 0;
   points = 0;
-  document.querySelector('#showTime').style.display = 'block';
-  document.querySelector('#timer').style.display = 'block';
-  // shuffleArray(questionsChoice1);     Denna rad behövs inte om jag startar från kategorisidan
+  document.querySelector('#showTime').classList.remove('hidden');
+  document.querySelector('#timer').classList.remove('hidden');
+  document.querySelector('#resultBtn').classList.add('hidden'); 
   chooseCategory();
 }
 
 function gameOver() {     // Funktion för att visa sista sidan; gameover-sidan.
-  document.querySelector('#gameOver').style.display = 'block';
-  if (currentQuestion === questionsChoice1.length) {
-    document.querySelector('#resultBtn').style.display = 'block';
-    //document.querySelector('#nextQuestBtn').style.display = 'none';
-    document.querySelector('#questionsContainer').style.display = 'none';
-    return;
+  document.querySelector('#gameOver').classList.remove('hidden');
+  if (currentQuestion >= chosenCat.length) {
+    
+    document.querySelector('#resultBtn').classList.remove('visible');
+    document.querySelector('#questionsContainer').classList.add('hidden');
+    return;    
   }
 }
 
+//document.querySelector('#questionsContainer').classList.add('hidden'); 
+document.querySelector('#questionsContainer').classList.remove('hidden');
 const resultBtn = document.querySelector('#resultBtn');
 resultBtn.addEventListener('click', showResult);
 
 function showResult() {     // Funktion för att visa resultat på sista sidan
   document.querySelector('#questionsContainer').classList.add('hidden');
- // document.querySelector('#nextQuestBtn').style.display = 'none';
-  document.querySelector('#pointsContainer').innerHTML = `Du fick ${points} poäng!`;
-  document.querySelector('#showTime').style.display = 'none';
-  document.querySelector('#timer').style.display = 'none';
-  document.querySelector('#resultBtn').style.display = 'none';
+  document.querySelector('#nextQuestBtn').classList.add('hidden'); 
+  document.querySelector('#pointsContainer').innerHTML = `Du fick ${points} poäng av 10!`;
+  document.querySelector('#showTime').classList.add('hidden'); 
+  document.querySelector('#timer').classList.add('hidden'); 
+  document.querySelector('#resultBtn').classList.add('hidden'); 
 
   gsap.to('#pointsContainer', { opacity: 0.5, delay: 1, repeat: -1, yoyo: true });
 
@@ -366,7 +367,7 @@ function showResult() {     // Funktion för att visa resultat på sista sidan
     }
     else {
     console.log('Bättre lycka nästa gång!');
-    document.querySelector('.pointsMess3').innerHTML = `Ajdå! Bättre lycka nästa gång! 😐`;
+    document.querySelector('.pointsMess3').innerHTML = `Bättre lycka nästa gång! 😐`;
     }
   }
 
