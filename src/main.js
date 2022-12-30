@@ -4,11 +4,11 @@ import { gsap } from 'gsap';      // Importerar gsap som behövs för animering
 function chooseCategory() {     // Funktion för att visa startsidan
   document.querySelector('h1').style.display = 'block';     // Visar/tar fram det som ska synas på sidan
   document.querySelector('#categoryContainer').style.display = 'block';
-  document.querySelector('#questionText').style.display = 'none';     // Döljer det som inte ska synas
-  document.querySelector('#answerContainer').style.display = 'none';
+  document.querySelector('#questionsContainer').style.display = 'none';     // Döljer det som inte ska synas
+  //document.querySelector('#answerContainer').style.display = 'none';
   document.querySelector('#showTime').style.display = 'none';
   document.querySelector('#timer').style.display = 'none';
-  document.querySelector('#nextQuestBtn').style.display = 'none';
+  //document.querySelector('#nextQuestBtn').style.display = 'none';
 }
 
 const category = [      // Skapar array för de olika kategorierna
@@ -37,6 +37,8 @@ function checkChoice(e) {      // Skapar funktion för val av kategori
   const userCategory = e.currentTarget.innerHTML;
   document.querySelector('.startGamePage').style.display = 'block';
   document.querySelector('.questionPage').style.display = 'block';
+  document.querySelector('#player').style.display = 'block';
+
 
   const userChoice = category[currentTarget].userChoice;
   if (userCategory === 'Film') {
@@ -77,6 +79,7 @@ function startGame() {      // Funktion för att visa sid 2
   nextQuestion();
   document.querySelector('#showTime').style.display = 'block';
   document.querySelector('#timer').style.display = 'block';
+  document.querySelector('#questionsContainer').style.display = 'block';
 }
 
 const questionsChoice1 = [      // Skapar array för frågor och svarsalternativ
@@ -328,7 +331,8 @@ function gameOver() {     // Funktion för att visa sista sidan; gameover-sidan.
   document.querySelector('#gameOver').style.display = 'block';
   if (currentQuestion === questionsChoice1.length) {
     document.querySelector('#resultBtn').style.display = 'block';
-    document.querySelector('#nextQuestBtn').style.display = 'none';
+    //document.querySelector('#nextQuestBtn').style.display = 'none';
+    document.querySelector('#questionsContainer').style.display = 'none';
     return;
   }
 }
@@ -338,7 +342,7 @@ resultBtn.addEventListener('click', showResult);
 
 function showResult() {     // Funktion för att visa resultat på sista sidan
   document.querySelector('#questionsContainer').classList.add('hidden');
-  document.querySelector('#nextQuestBtn').style.display = 'none';
+ // document.querySelector('#nextQuestBtn').style.display = 'none';
   document.querySelector('#pointsContainer').innerHTML = `Du fick ${points} poäng!`;
   document.querySelector('#showTime').style.display = 'none';
   document.querySelector('#timer').style.display = 'none';
@@ -348,15 +352,15 @@ function showResult() {     // Funktion för att visa resultat på sista sidan
 
   if (points == 10) {     // Olika meddelanden beroende på antal poäng
     console.log('Alla rätt!');
-    document.querySelector('#pointsMess1').innerHTML = `Grattis!! Det där gick ju strålande!`;
+    document.querySelector('.pointsMess1').innerHTML = `Grattis!! Det där gick ju strålande!`;
     }
     else if (points <= 9 && points >= 5) {
     console.log('Bra jobbat!');
-    document.querySelector('#pointsMess2').innerHTML = `Bra jobbat!`;
+    document.querySelector('.pointsMess2').innerHTML = `Bra jobbat!`;
     }
     else {
     console.log('Bättre lycka nästa gång!');
-    document.querySelector('#pointsMess3').innerHTML = `Bättre lycka nästa gång!`;
+    document.querySelector('.pointsMess3').innerHTML = `Bättre lycka nästa gång!`;
     }
   }
 
