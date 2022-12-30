@@ -62,6 +62,12 @@ function checkChoice(e) {      // Skapar funktion för val av kategori
   gsap.to('#showChoice', { opacity: 0.5, delay: 1, repeat: -1, yoyo: true });
 }
 
+
+let chooseCatText
+
+
+
+
 let player = 0;
 
 document.querySelector('#startGameBtn').addEventListener('click', startGame);
@@ -352,15 +358,15 @@ function showResult() {     // Funktion för att visa resultat på sista sidan
 
   if (points == 10) {     // Olika meddelanden beroende på antal poäng
     console.log('Alla rätt!');
-    document.querySelector('.pointsMess1').innerHTML = `Grattis!! Det där gick ju strålande!`;
+    document.querySelector('.pointsMess1').innerHTML = `Grattis!! Det där gick ju strålande! 🎉`;
     }
     else if (points <= 9 && points >= 5) {
     console.log('Bra jobbat!');
-    document.querySelector('.pointsMess2').innerHTML = `Bra jobbat!`;
+    document.querySelector('.pointsMess2').innerHTML = `Nice! 😎`;
     }
     else {
     console.log('Bättre lycka nästa gång!');
-    document.querySelector('.pointsMess3').innerHTML = `Bättre lycka nästa gång!`;
+    document.querySelector('.pointsMess3').innerHTML = `Ajdå! Bättre lycka nästa gång! 😐`;
     }
   }
 
