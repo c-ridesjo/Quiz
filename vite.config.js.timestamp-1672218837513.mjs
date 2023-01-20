@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import { defineConfig } from "file:///C:/Users/Camilla/github-classroom/Medieinstitutet/fed22d-js-grundkurs-2-quiz-c-ridesjo/node_modules/vite/dist/node/index.js";
 var vite_config_default = defineConfig({
-  base: "/c-ridesjo.github.io/Quiz/",
+  base: "/Quiz/",
   define: {
     "process.env": {}
   }
