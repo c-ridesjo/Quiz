@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="A quiz">
+  <meta property="og:title" content="FamiljeQuizzet">
+  <meta property="og:type" content="A quiz for the family">
+  <link rel="icon" type="image/ico" href="/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Kanit&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projekt</title>
+  <script type="module" crossorigin src="/fed22d-js-grundkurs-2-quiz-c-ridesjo/assets/index.8ee25718.js"></script>
+  <link rel="stylesheet" href="/fed22d-js-grundkurs-2-quiz-c-ridesjo/assets/index.d726cc87.css">
+</head>
+
+<body>
+  <main>
+    <h1>FamiljeQuizzet</h1>
+    <section class="frontPage">
+      <div id="categoryContainer" class="categoryContainer">
+        <div id="categoryText" class="categoryText">Välj kategori!</div>
+        <button id="choice1" class="choice1">Film</button>
+        <button id="choice2" class="choice2">Musik</button>
+        <button id="choice3" class="choice3">Familj</button>
+      </div>
+    </section>
+
+    <div class="startGamePage">
+      <div id="player" class="player">
+        <div id="showChoice" class="showChoice"></div>
+        <label>
+          Skriv ditt namn:<br><input type="text" id="playerInput" class="playerInput" value=" "><br>
+        </label>
+        <button id="startGameBtn" class="startGameBtn">Starta</button>
+      </div>
+    </div>
+
+    <section class="questionPage">
+      <div id="questionsContainer" class="questionsContainer">
+        <div id="questionText" class="questionText"></div> <!--Frågor-->
+        <div id="answerContainer" class="answerContainer">
+          <button id="answer1" class="answer1"></button>
+          <button id="answer2" class="answer2"></button>
+          <button id="answer3" class="answer3"></button>
+        </div>
+      </div>
+      <div class="buttons"></div>
+
+      <button id="nextQuestBtn" class="nextQuestBtn">Nästa fråga</button>
+      <button id="resultBtn" class="resultBtn">Visa resultat</button>
+      <div class="timeContainer">
+        <span id="showTime" class="showTime">Återstående tid</span>
+        <span id="timer" class="timer">00:00</span>
+      </div>
+    </section>
+
+    <div id="gameOver" class="hidden">
+      <p id="pointsContainer" class="pointsContainer"></p><br>
+      <p class="pointsMess"></p>  
+      <button id="restartGameBtn" class="restartGameBtn">Spela igen</button>
+    </div>
+    
+  </main>
+</body>
+
+</html>
